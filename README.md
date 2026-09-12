@@ -1,8 +1,9 @@
-# Atividades Interativas — Registros de Aula
+# Atividades Interativas — Redes de Computadores
 
-Páginas interativas dos **Registros de Aula** das disciplinas técnicas, com
-diagramas explicativos, passo a passo guiado, formulário preenchível e geração
-do relatório em PDF direto pelo navegador.
+Páginas interativas dos **Registros de Aula** da disciplina *Redes de
+Computadores e Segurança da Informação na Nuvem*, com diagramas explicativos,
+passo a passo guiado, formulário preenchível e geração do relatório em PDF
+direto pelo navegador.
 
 **Acesso:** https://olisam2303-ux.github.io/atividades-interativas/
 
@@ -21,12 +22,16 @@ do relatório em PDF direto pelo navegador.
 
 ## Conteúdo
 
-| Disciplina | Semanas | Páginas |
+As 20 semanas da disciplina, em 21 páginas (a semana 13 tem dois registros):
+
+| Bimestre | Semanas | Páginas |
 |---|---|---|
-| Redes de Computadores e Segurança da Informação na Nuvem | 1 a 7 (1º bimestre) | 7 |
-| Redes de Computadores e Segurança da Informação na Nuvem | 8 a 15 (2º bimestre) | 9 |
-| Redes de Computadores e Segurança da Informação na Nuvem | 16 a 20 (3º bimestre) | 5 |
-| Lógica e Linguagem de Programação | 1 a 7 (1º bimestre) | 7 |
+| 1º | 1 a 7 | 7 |
+| 2º | 8 a 15 | 9 |
+| 3º | 16 a 20 | 5 |
+
+> As atividades de *Lógica e Linguagem de Programação* ficam em um material
+> próprio, dedicado só àquela disciplina.
 
 ## Como usar
 
