@@ -169,6 +169,24 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
 .check span{font-size:14.5px}
 .check.done{background:var(--ok-soft);border-color:var(--ok)}
 .progresso{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.dados{margin:18px 0;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.dados .cab{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:11px 14px;border-bottom:1px solid var(--line);background:var(--accent-soft)}
+.dados .nomeArq{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;font-weight:600;color:var(--accent)}
+.dados .acoes{display:flex;gap:8px}
+.dados .mini{font:inherit;font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:8px;cursor:pointer;
+  border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;display:inline-block}
+.dados .mini:hover{border-color:var(--accent)}
+.dados pre{margin:0;padding:13px 15px;overflow-x:auto;font-family:ui-monospace,Menlo,Consolas,monospace;
+  font-size:12.5px;line-height:1.65;color:var(--ink);white-space:pre}
+.dados .obs{padding:9px 15px 12px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+@media print{.dados .acoes{display:none}}
+.proc{margin-top:16px;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:10px;background:var(--card);padding:13px 15px}
+.proc h3{margin:0 0 7px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.proc ul{margin:0;padding-left:17px}
+.proc li{font-size:13.5px;line-height:1.55;color:var(--muted);margin:3px 0}
+.proc li b{color:var(--ink);font-weight:600}
 .avisoPDF{margin-top:14px;background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:10px;
   padding:13px 15px;font-size:14px}
 .avisoPDF b{color:var(--accent)}
@@ -247,6 +265,8 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <p class="lead" style="color:var(--ink);font-size:15.5px">Uma empresa criou um sistema para cadastro de candidatos em vagas de estágio. O formulário será usado por muitas pessoas, e a equipe percebeu que alguns campos estão aceitando dados sem controle suficiente. Seu grupo vai ajudar a melhorar esse formulário antes que ele entre no ar. Campos do sistema: nome completo, e-mail, idade, senha, mensagem de apresentação. Hoje o formulário aceita praticamente qualquer entrada, sem verificar formato, tamanho ou conteúdo.</p>
   </section>
 
+  
+
   <section>
     <div class="sec-head"><span class="n">OBJETIVOS</span><h2>O que vocês vão aprender aqui</h2></div>
     <ul class="objetivos">
@@ -267,7 +287,7 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Toda entrada é suspeita até ser validada</h2></div>
       <p class="lead">A regra de ouro do OWASP: valide no servidor, sempre. A validação no navegador melhora a experiência, mas pode ser burlada.</p>
-      <div class="visual"><svg viewBox="0 0 700 298" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
+      <div class="visual"><svg viewBox="0 0 700 302" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
       <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
@@ -311,7 +331,7 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
         <rect x="380" y="198" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
         <text x="520" y="220" class="sv-label sv-small">aceita e armazena com</text><text x="520" y="236" class="sv-label sv-small">segurança</text>
         
-      </g><text x="350" y="292" class="sv-legend">Validar é uma sequência de perguntas — e a primeira que falha já interrompe o processo.</text>
+      </g><text x="350" y="284" class="sv-legend">Validar é uma sequência de perguntas — e a primeira que falha já interrompe o processo.</text>
 </svg></div><div class="visual"><svg viewBox="0 0 690 162" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
@@ -468,6 +488,7 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
 
     <h3>Referências</h3>
     <ul><li>Apostila da disciplina — Capítulo 15 — Segurança de Aplicações Web (OWASP Top 10).</li><li><b>Leitura complementar (Kurose &amp; Ross):</b> KUROSE, J. F.; ROSS, K. W. <i>Redes de Computadores e a Internet</i>. Pearson, 2013 — Cap. 8, §8.1–8.3 (fundamentos de segurança — o livro não cobre OWASP especificamente), p. 496–518.</li><li>OPEN WEB APPLICATION SECURITY PROJECT. "OWASP Top 10: 2021". OWASP Foundation, 2021.</li><li>OPEN WEB APPLICATION SECURITY PROJECT. "A03 Injeção". OWASP Top 10: 2021.</li><li>OPEN WEB APPLICATION SECURITY PROJECT. "Cross Site Scripting (XSS)". OWASP Foundation, s.d.</li><li>OPEN WEB APPLICATION SECURITY PROJECT. "Input Validation Cheat Sheet" e "Cross Site Scripting Prevention Cheat Sheet". OWASP Cheat Sheet Series, s.d.</li><li>CLOUDFLARE. "O que é OWASP? O que é o OWASP Top 10?", s.d.</li><li>G1. "Falha de segurança na plataforma digital do INSS provoca vazamento de dados de cerca de 2 milhões de segurados", 2026.</li><li>MDN WEB DOCS. "Validação de formulários", s.d.</li><li>SEDUC-SP — Registro de Aula S15A3.</li></ul>
+    
   </div>
 </div>
 
@@ -603,6 +624,24 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
       });
     }
   }
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-copiar]"), function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.querySelector('pre[data-arquivo="' + b.getAttribute("data-copiar") + '"]');
+      if (!pre) return;
+      var txt = pre.textContent;
+      var antigo = b.textContent;
+      function ok() { b.textContent = "Copiado!"; setTimeout(function () { b.textContent = antigo; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(ok, function () { b.textContent = "Selecione e copie"; });
+      } else {
+        var t = document.createElement("textarea");
+        t.value = txt; document.body.appendChild(t); t.select();
+        try { document.execCommand("copy"); ok(); } catch (e) { b.textContent = "Selecione e copie"; }
+        document.body.removeChild(t);
+      }
+    });
+  });
 
   var pdf = document.getElementById("btnPDF");
   if(pdf) pdf.addEventListener("click", function(){ montarRelatorio(); window.print(); });
