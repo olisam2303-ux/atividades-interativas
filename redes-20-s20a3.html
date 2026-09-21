@@ -154,6 +154,7 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);
 .modelo .b{color:var(--muted)}
 
 .tabWrap{overflow-x:auto}
+.tabWrap select{width:100%;min-width:92px;font:inherit;font-size:13.5px;padding:6px 7px;border-radius:7px;border:1px solid var(--border);background:var(--surface);color:var(--ink)}
 table{width:100%;border-collapse:collapse;font-size:14px}
 th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
 th{background:var(--accent-soft);color:var(--accent);font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:650}
@@ -661,10 +662,12 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
             r2.textContent = bloco.dataset.rotulo;
             item.appendChild(r2);
           }
-          var t = bloco.querySelector("table").cloneNode(true);
-          t.querySelectorAll("input").forEach(function(inp){
-            var td = inp.parentNode;
-            td.textContent = inp.value || "—";
+          var orig = bloco.querySelector("table");
+          var t = orig.cloneNode(true);
+          t.querySelectorAll("input,select").forEach(function(el){
+            var fonte = orig.querySelector('[data-campo="' + el.getAttribute("data-campo") + '"]');
+            var v = fonte ? fonte.value : el.value;
+            el.parentNode.textContent = v || "—";
           });
           item.appendChild(t);
         }

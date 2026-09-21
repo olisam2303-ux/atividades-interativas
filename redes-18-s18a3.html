@@ -154,6 +154,7 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);
 .modelo .b{color:var(--muted)}
 
 .tabWrap{overflow-x:auto}
+.tabWrap select{width:100%;min-width:92px;font:inherit;font-size:13.5px;padding:6px 7px;border-radius:7px;border:1px solid var(--border);background:var(--surface);color:var(--ink)}
 table{width:100%;border-collapse:collapse;font-size:14px}
 th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
 th{background:var(--accent-soft);color:var(--accent);font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:650}
@@ -409,10 +410,23 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="passo">
         <div class="passo-top">
           <span class="passo-num">1</span>
-          <div class="passo-txt">Responda.</div>
+          <div class="passo-txt">Analisem cada dado pedido pelo cadastro.</div>
         </div>
-        
-        <div class="campoWrap" data-rel="campo" data-rotulo="Turma"><label class="f" for="c0">Turma</label><input type="text" id="c0" data-campo="c0" placeholder=""></div><div class="campoWrap" data-rel="campo" data-rotulo="Dupla / integrantes"><label class="f" for="c1">Dupla / integrantes</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> A finalidade é uma só: <b>selecionar candidatos, entrar em contato e organizar as inscrições</b>. Para cada dado, perguntem se ele serve a isso. Se não serve, é <b>excessivo</b> — e a LGPD manda não coletar. Atenção redobrada à religião e ao histórico de doenças: são <b>dados sensíveis</b>, e exigem justificativa muito mais forte.</div>
+        <div class="campoWrap tabWrap" data-rel="tabela" data-rotulo="Análise campo a campo do cadastro">
+    <label class="f">Análise campo a campo do cadastro</label>
+    <table><thead><tr><th>Campo</th><th>Relação com a finalidade</th><th>Necessário?</th><th>Adequado ou excessivo?</th><th>O que ajustar?</th></tr></thead><tbody><tr><td class="fix">Nome completo</td><td><input type="text" data-campo="t0_0_1"></td><td><select data-campo="t0_0_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_0_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_0_4"></td></tr><tr><td class="fix">CPF</td><td><input type="text" data-campo="t0_1_1"></td><td><select data-campo="t0_1_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_1_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_1_4"></td></tr><tr><td class="fix">E-mail</td><td><input type="text" data-campo="t0_2_1"></td><td><select data-campo="t0_2_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_2_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_2_4"></td></tr><tr><td class="fix">Telefone</td><td><input type="text" data-campo="t0_3_1"></td><td><select data-campo="t0_3_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_3_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_3_4"></td></tr><tr><td class="fix">Endereço completo</td><td><input type="text" data-campo="t0_4_1"></td><td><select data-campo="t0_4_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_4_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_4_4"></td></tr><tr><td class="fix">Foto do rosto</td><td><input type="text" data-campo="t0_5_1"></td><td><select data-campo="t0_5_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_5_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_5_4"></td></tr><tr><td class="fix">Religião</td><td><input type="text" data-campo="t0_6_1"></td><td><select data-campo="t0_6_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_6_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_6_4"></td></tr><tr><td class="fix">Histórico de doenças</td><td><input type="text" data-campo="t0_7_1"></td><td><select data-campo="t0_7_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_7_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_7_4"></td></tr><tr><td class="fix">Curso atual</td><td><input type="text" data-campo="t0_8_1"></td><td><select data-campo="t0_8_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_8_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_8_4"></td></tr><tr><td class="fix">Rendimento escolar</td><td><input type="text" data-campo="t0_9_1"></td><td><select data-campo="t0_9_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_9_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_9_4"></td></tr><tr><td class="fix">Nome da mãe</td><td><input type="text" data-campo="t0_10_1"></td><td><select data-campo="t0_10_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_10_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_10_4"></td></tr><tr><td class="fix">Perfil em rede social</td><td><input type="text" data-campo="t0_11_1"></td><td><select data-campo="t0_11_2"><option value="">—</option><option value="Sim">Sim</option><option value="Não">Não</option></select></td><td><select data-campo="t0_11_3"><option value="">—</option><option value="Adequado">Adequado</option><option value="Excessivo">Excessivo</option></select></td><td><input type="text" data-campo="t0_11_4"></td></tr></tbody></table>
+  </div>
+      </div><div class="passo">
+        <div class="passo-top">
+          <span class="passo-num">2</span>
+          <div class="passo-txt">Concluam: o cadastro está em conformidade com a LGPD?</div>
+        </div>
+        <div class="dica"><b>Como pensar:</b> Juntem o que a tabela mostrou. Quantos dados saem? Algum deveria virar opcional em vez de sair? E qual base legal sustenta o que ficou?</div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="Conclusão sobre a conformidade do cadastro"><label class="f" for="c1">Conclusão da dupla</label><textarea id="c1" data-campo="c1" rows="5" placeholder="O cadastro (está / não está) em conformidade porque...
+Devem sair: ...
+Podem ficar como opcionais: ...
+A base legal do que fica é ..."></textarea></div>
       </div>
   </section>
 <section>
@@ -652,10 +666,12 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
             r2.textContent = bloco.dataset.rotulo;
             item.appendChild(r2);
           }
-          var t = bloco.querySelector("table").cloneNode(true);
-          t.querySelectorAll("input").forEach(function(inp){
-            var td = inp.parentNode;
-            td.textContent = inp.value || "—";
+          var orig = bloco.querySelector("table");
+          var t = orig.cloneNode(true);
+          t.querySelectorAll("input,select").forEach(function(el){
+            var fonte = orig.querySelector('[data-campo="' + el.getAttribute("data-campo") + '"]');
+            var v = fonte ? fonte.value : el.value;
+            el.parentNode.textContent = v || "—";
           });
           item.appendChild(t);
         }
