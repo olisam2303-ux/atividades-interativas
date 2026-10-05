@@ -22,13 +22,14 @@ direto pelo navegador.
 
 ## Conteúdo
 
-As 20 semanas da disciplina, em 21 páginas (a semana 13 tem dois registros):
+As 21 semanas da disciplina, em 23 páginas (a semana 13 e a semana 21 têm dois registros cada):
 
 | Bimestre | Semanas | Páginas |
 |---|---|---|
 | 1º | 1 a 7 | 7 |
 | 2º | 8 a 15 | 9 |
 | 3º | 16 a 20 | 5 |
+| 4º | 21 | 2 |
 
 > As atividades de *Lógica e Linguagem de Programação* ficam em um material
 > próprio, dedicado só àquela disciplina.
