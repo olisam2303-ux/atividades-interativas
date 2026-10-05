@@ -364,12 +364,12 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="comoBox">
       <h2>Como preencher este relatório</h2>
       <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário da TechNova e observe o desenho de referência acima.</span></li>
-        <li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li>
-        <li><span class="num">3</span><span>Passo 1: descreva a topologia lógica — a VPC, as duas sub-redes, o vRouter e o gateway de internet (ou cole uma foto do desenho).</span></li>
-        <li><span class="num">4</span><span>Passo 2: escreva as duas regras de fluxo, uma para o servidor web e uma para o banco de dados.</span></li>
-        <li><span class="num">5</span><span>Passo 3: responda às três perguntas de reflexão usando o seu desenho como base.</span></li>
-        <li><span class="num">6</span><span>Confira o checklist e gere o PDF (desmarque "Cabeçalhos e rodapés" em "Mais configurações").</span></li>
+        <li><span class="num">1</span><span>Leia a história da TechNova e observe o desenho de referência.</span></li>
+        <li><span class="num">2</span><span>Preencha o Passo 0: escola, grupo, integrantes, professor e data.</span></li>
+        <li><span class="num">3</span><span>Passo 1: desenhe a rede no papel (ou no computador). Depois, escreva uma frase descrevendo o que você desenhou.</span></li>
+        <li><span class="num">4</span><span>Passo 2: escreva as duas regras. Uma para o servidor web e uma para o banco de dados.</span></li>
+        <li><span class="num">5</span><span>Passo 3: responda às 3 perguntas. Uma ou duas frases para cada uma.</span></li>
+        <li><span class="num">6</span><span>Confira o checklist, gere o PDF e envie no AVA.</span></li>
       </ol>
     </div>
   </section>
@@ -391,29 +391,29 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="passo">
         <div class="passo-top">
           <span class="passo-num">1</span>
-          <div class="passo-txt">1. Desenhe a topologia lógica da rede TechNova (Parte 2).</div>
+          <div class="passo-txt">1. Desenhe a rede da TechNova.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Cada componente tem um papel: a VPC é o limite isolado, as sub-redes dividem a VPC, o vRouter conecta as sub-redes e o gateway é a única porta para a internet.</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="Descrição da topologia lógica (ou cole a foto do desenho)"><label class="f" for="c0">Descrição da topologia lógica (ou cole a foto do desenho)</label><input type="text" id="c0" data-campo="c0" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> A caixa grande é a rede isolada (VPC/VNet). Dentro dela ficam duas caixas menores: a sub-rede pública (acessível pela internet) e a sub-rede privada (só acessível de dentro). O vRouter liga as duas, e o gateway é a porta da internet.</div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="Descreva o seu desenho em uma ou duas frases (ou cole a foto)"><label class="f" for="c0">Descreva o seu desenho em uma ou duas frases (ou cole a foto)</label><input type="text" id="c0" data-campo="c0" placeholder=""></div>
       </div>
     <div class="passo">
         <div class="passo-top">
           <span class="passo-num">2</span>
-          <div class="passo-txt">2. Defina as regras de fluxo — o data plane (Parte 3).</div>
+          <div class="passo-txt">2. Escreva as duas regras de segurança.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Pense nas instruções que o controlador envia aos switches virtuais: quem pode falar com quem, em qual porta, e o que fica bloqueado.</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="Regra 1 — servidor web (origem, destino, porta e ação)"><label class="f" for="c1">Regra 1 — servidor web (origem, destino, porta e ação)</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="Regra 2 — banco de dados (origem, destino, porta e ação)"><label class="f" for="c2">Regra 2 — banco de dados (origem, destino, porta e ação)</label><input type="text" id="c2" data-campo="c2" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> Uma regra responde a três perguntas: quem pode entrar, em qual destino e por qual porta. Servidor web: a internet pode entrar. Banco de dados: só o servidor web pode entrar.</div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="Regra 1 — servidor web: quem pode entrar e por qual porta?"><label class="f" for="c1">Regra 1 — servidor web: quem pode entrar e por qual porta?</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="Regra 2 — banco de dados: quem pode entrar e por qual porta?"><label class="f" for="c2">Regra 2 — banco de dados: quem pode entrar e por qual porta?</label><input type="text" id="c2" data-campo="c2" placeholder=""></div>
       </div>
     <div class="passo">
         <div class="passo-top">
           <span class="passo-num">3</span>
-          <div class="passo-txt">3. Reflexão e consolidação (Parte 4).</div>
+          <div class="passo-txt">3. Responda às perguntas de reflexão.</div>
         </div>
-        
-        <div class="campoWrap" data-rel="campo" data-rotulo="1. Se o servidor físico que hospeda o banco de dados falhar, o IP lógico do banco muda? Por que a SDN permite isso?"><label class="f" for="c3">1. Se o servidor físico que hospeda o banco de dados falhar, o IP lógico do banco muda? Por que a SDN permite isso?</label><input type="text" id="c3" data-campo="c3" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="2. Como o isolamento da VPC/VNet protege a TechNova de outras empresas que usam a mesma nuvem pública?"><label class="f" for="c4">2. Como o isolamento da VPC/VNet protege a TechNova de outras empresas que usam a mesma nuvem pública?</label><input type="text" id="c4" data-campo="c4" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual a principal vantagem de definir toda a rede por software em vez de comprar cabos e roteadores físicos?"><label class="f" for="c5">3. Qual a principal vantagem de definir toda a rede por software em vez de comprar cabos e roteadores físicos?</label><input type="text" id="c5" data-campo="c5" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> Use o seu desenho como apoio. Uma ou duas frases são suficientes.</div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="1. Se o servidor físico que hospeda o banco de dados falhar, o IP do banco muda? Por quê?"><label class="f" for="c3">1. Se o servidor físico que hospeda o banco de dados falhar, o IP do banco muda? Por quê?</label><input type="text" id="c3" data-campo="c3" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="2. Como a rede isolada (VPC/VNet) protege a TechNova de outras empresas que usam a mesma nuvem?"><label class="f" for="c4">2. Como a rede isolada (VPC/VNet) protege a TechNova de outras empresas que usam a mesma nuvem?</label><input type="text" id="c4" data-campo="c4" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual a principal vantagem de desenhar a rede por software, em vez de comprar cabos e roteadores?"><label class="f" for="c5">3. Qual a principal vantagem de desenhar a rede por software, em vez de comprar cabos e roteadores?</label><input type="text" id="c5" data-campo="c5" placeholder=""></div>
       </div>
   </section>
 

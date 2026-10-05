@@ -371,12 +371,12 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="comoBox">
       <h2>Como preencher este relatório</h2>
       <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário da InovaTech e observe a topologia de referência acima.</span></li>
-        <li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li>
-        <li><span class="num">3</span><span>Passo 1: desenhe a topologia em árvore, separando a linha tracejada das linhas contínuas (ou cole uma foto do desenho).</span></li>
-        <li><span class="num">4</span><span>Passo 2: descreva, um de cada vez, o caminho do ping de h1 até h4 e a volta da resposta, pensando como o switch.</span></li>
-        <li><span class="num">5</span><span>Passo 3: responda às três perguntas de reflexão usando o seu planejamento como base.</span></li>
-        <li><span class="num">6</span><span>Confira o checklist e gere o PDF (desmarque "Cabeçalhos e rodapés" em "Mais configurações").</span></li>
+        <li><span class="num">1</span><span>Leia a história da InovaTech e observe a topologia de referência.</span></li>
+        <li><span class="num">2</span><span>Preencha o Passo 0: escola, grupo, integrantes, professor e data.</span></li>
+        <li><span class="num">3</span><span>Passo 1: desenhe a topologia no papel (ou no computador). Depois, descreva o desenho em uma frase.</span></li>
+        <li><span class="num">4</span><span>Passo 2: descreva o caminho do ping de h1 até h4. Uma frase para cada etapa, pensando como o switch.</span></li>
+        <li><span class="num">5</span><span>Passo 3: responda às 3 perguntas. Uma ou duas frases para cada uma.</span></li>
+        <li><span class="num">6</span><span>Confira o checklist, gere o PDF e envie no AVA (com a foto do desenho, se fizer).</span></li>
       </ol>
     </div>
   </section>
@@ -398,31 +398,32 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="passo">
         <div class="passo-top">
           <span class="passo-num">1</span>
-          <div class="passo-txt">1. Desenhe a topologia em árvore (Parte 2).</div>
+          <div class="passo-txt">1. Desenhe a topologia do laboratório.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Use círculo para o controlador (c0), quadrado para os switches (s1, s2, s3) e computador para os hosts (h1 a h4). Mantenha a linha tracejada do controlador separada dos cabos de dados.</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="Descrição do desenho (ou cole a foto) — confirme h1 e h2 no s2, h3 e h4 no s3"><label class="f" for="c0">Descrição do desenho (ou cole a foto) — confirme h1 e h2 no s2, h3 e h4 no s3</label><input type="text" id="c0" data-campo="c0" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> Controlador (c0): um círculo no topo. Switches (s1, s2, s3): quadrados. s1 no meio, ligado a s2 e s3. Hosts (h1 a h4): computadores; h1 e h2 ligados ao s2, h3 e h4 ligados ao s3. Linha tracejada = canal de controle. Linha contínua = cabo de dados.</div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="Descreva o desenho em uma frase (ou cole a foto)"><label class="f" for="c0">Descreva o desenho em uma frase (ou cole a foto)</label><input type="text" id="c0" data-campo="c0" placeholder=""></div>
       </div>
     <div class="passo">
         <div class="passo-top">
           <span class="passo-num">2</span>
-          <div class="passo-txt">2. Descreva o fluxo do ping h1 → h4 (Parte 3).</div>
+          <div class="passo-txt">2. Descreva o caminho do ping de h1 até h4.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Pense como o switch: ao receber o pacote de h1, ele sabe onde fica o h4? Não. Então, para quem ele pergunta?</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="1. O que acontece quando o pacote sai de h1 e chega em s2?"><label class="f" for="c1">1. O que acontece quando o pacote sai de h1 e chega em s2?</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="2. O que o s2 faz ao receber um pacote desconhecido? Com quem ele fala?"><label class="f" for="c2">2. O que o s2 faz ao receber um pacote desconhecido? Com quem ele fala?</label><input type="text" id="c2" data-campo="c2" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="3. O que o controlador (c0) responde para o s2?"><label class="f" for="c3">3. O que o controlador (c0) responde para o s2?</label><input type="text" id="c3" data-campo="c3" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="4. Descreva o restante do caminho até h4 e a volta da resposta (pong) até h1."><label class="f" for="c4">4. Descreva o restante do caminho até h4 e a volta da resposta (pong) até h1.</label><input type="text" id="c4" data-campo="c4" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> Pense como o switch: ao receber o pacote de h1, ele sabe o caminho até h4? Não. Então, para quem ele pergunta? Escreva uma frase para cada etapa.</div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="a) O pacote sai de h1 e chega ao s2. E agora, o que o s2 faz?"><label class="f" for="c1">a) O pacote sai de h1 e chega ao s2. E agora, o que o s2 faz?</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="b) Com quem o s2 fala? O que ele pergunta?"><label class="f" for="c2">b) Com quem o s2 fala? O que ele pergunta?</label><input type="text" id="c2" data-campo="c2" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="c) O que o controlador responde ao s2?"><label class="f" for="c3">c) O que o controlador responde ao s2?</label><input type="text" id="c3" data-campo="c3" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="d) Por onde o pacote segue até chegar em h4?"><label class="f" for="c4">d) Por onde o pacote segue até chegar em h4?</label><input type="text" id="c4" data-campo="c4" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="e) Como a resposta (o pong) volta de h4 até h1?"><label class="f" for="c5">e) Como a resposta (o pong) volta de h4 até h1?</label><input type="text" id="c5" data-campo="c5" placeholder=""></div>
       </div>
     <div class="passo">
         <div class="passo-top">
           <span class="passo-num">3</span>
-          <div class="passo-txt">3. Reflexão e consolidação (Parte 4).</div>
+          <div class="passo-txt">3. Responda às perguntas de reflexão.</div>
         </div>
-        
-        <div class="campoWrap" data-rel="campo" data-rotulo="1. Se o controlador (c0) cair e h1 enviar uma mensagem para h2 pela primeira vez, o que acontece?"><label class="f" for="c5">1. Se o controlador (c0) cair e h1 enviar uma mensagem para h2 pela primeira vez, o que acontece?</label><input type="text" id="c5" data-campo="c5" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="2. Por que é útil rodar hosts, switches e controlador num único computador físico para estudar redes?"><label class="f" for="c6">2. Por que é útil rodar hosts, switches e controlador num único computador físico para estudar redes?</label><input type="text" id="c6" data-campo="c6" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual é a função da linha tracejada (OpenFlow) que você desenhou entre os switches e o controlador?"><label class="f" for="c7">3. Qual é a função da linha tracejada (OpenFlow) que você desenhou entre os switches e o controlador?</label><input type="text" id="c7" data-campo="c7" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> Use o seu desenho e o caminho do ping como apoio. Uma ou duas frases são suficientes.</div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="1. Se o controlador (c0) cair e h1 enviar uma mensagem para h2 pela primeira vez, o que acontece?"><label class="f" for="c6">1. Se o controlador (c0) cair e h1 enviar uma mensagem para h2 pela primeira vez, o que acontece?</label><input type="text" id="c6" data-campo="c6" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="2. Por que é útil rodar hosts, switches e controlador num único computador para estudar redes?"><label class="f" for="c7">2. Por que é útil rodar hosts, switches e controlador num único computador para estudar redes?</label><input type="text" id="c7" data-campo="c7" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual é a função da linha tracejada (OpenFlow) que você desenhou?"><label class="f" for="c8">3. Qual é a função da linha tracejada (OpenFlow) que você desenhou?</label><input type="text" id="c8" data-campo="c8" placeholder=""></div>
       </div>
   </section>
 
