@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%90%3C/text%3E%3C/svg%3E">
 <title>Aplicação prática: divisão por departamentos — Registro de Aula S16A2 — Semana 16</title>
 <style>
 :root{
@@ -293,6 +294,13 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
   #roteiro th{background:#e8e8e8;color:#000;text-transform:none;font-variant:small-caps;letter-spacing:0}
   #roteiro .checkline{margin-bottom:1.5mm;font-size:11pt}
 }
+
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;background:var(--bg);padding:8px 0;border-bottom:2px solid var(--border-strong);margin-bottom:6px}
+.tabs{scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:1.5px solid var(--border-strong);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font-weight:600;white-space:nowrap;cursor:pointer;font:inherit}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+section.tab{display:flex;flex-direction:column;gap:16px}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -304,16 +312,18 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="sub">Registro de Aula S16A2 — Semana 16 · Aula 2 – Divisão de rede por departamentos</div>
     <div class="chips"><span class="chip">Unidade <b>16 – Endereçamento IPv4: Sub-rede e CIDR</b></span><span class="chip">Base: <b>Capítulo 16 — Endereçamento IPv4 – Sub-rede e CIDR</b></span><span class="chip">Tempo: <b>30 a 40 min</b></span><span class="chip">Entrega: <b>AVA</b></span><span class="chip">Arquivo: <b>NOME_TURMA_S16A2</b></span></div>
   </header>
+  <nav class="tabs" role="tablist" aria-label="Partes da atividade">
+    <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
+    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
+  </nav>
 
-  <section>
+<section class="tab" id="como" role="tabpanel">
+<section>
     <div class="sec-head"><span class="n">ATIVIDADE PROPOSTA</span><h2>O que vocês vão resolver</h2></div>
     <p class="lead" style="color:var(--ink);font-size:15.5px">Empresa com quatro departamentos: RH, Financeiro, TI e Vendas. Dividimos a rede 192.168.1.0/24 em quatro sub-redes /26. Calcule as quatro sub-redes e apresente os benefícios dessa implementação.</p>
   </section>
-
-  
-
-
-  <section>
+<section>
     <div class="sec-head"><span class="n">OBJETIVOS</span><h2>O que vocês vão aprender aqui</h2></div>
     <ul class="objetivos">
       <li><span class="tick">✓</span><span>descrever a estrutura de 32 bits de um endereço IPv4 e sua notação decimal;</span></li><li><span class="tick">✓</span><span>diferenciar a porção de rede e a porção de host de um endereço IPv4;</span></li><li><span class="tick">✓</span><span>explicar por que o CIDR substituiu o modelo classful;</span></li><li><span class="tick">✓</span><span>calcular hosts válidos a partir do prefixo CIDR;</span></li><li><span class="tick">✓</span><span>calcular blocos de sub-rede, endereço de rede e de broadcast;</span></li><li><span class="tick">✓</span><span>dividir uma rede real em sub-redes por setor;</span></li><li><span class="tick">✓</span><span>configurar IPs/máscaras em PCs e roteador no Packet Tracer e testar conectividade entre sub-redes.</span></li>
@@ -330,6 +340,16 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
       </div>
     </div>
   </section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Onde houver dica de <b>como pensar</b>, use-a antes de escrever.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Na janela de impressão, escolha <b>Destino: Salvar como PDF</b> e salve como <b>NOME_TURMA_S16A2</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Um /24 dividido em quatro /26</h2></div>
       <p class="lead">Cada bit emprestado da parte de host dobra o número de sub-redes e divide pela metade o número de endereços de cada uma.</p>
@@ -375,14 +395,8 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
   <rect x="0" y="0" width="560" height="222" rx="12" class="sv-card"/><text x="20" y="32" class="sv-code-title">Como chegar no /26</text><text x="20" y="52" class="sv-code sv-code-key" xml:space="preserve">/24 = 256 endereços em um bloco só</text><text x="20" y="78" class="sv-code sv-code-key" xml:space="preserve">emprestar 2 bits → 4 sub-redes</text><text x="42" y="104" class="sv-code sv-code-soft" xml:space="preserve">24 + 2 = /26</text><text x="42" y="130" class="sv-code sv-code-soft" xml:space="preserve">máscara 255.255.255.192</text><text x="42" y="156" class="sv-code sv-code-soft" xml:space="preserve">256 ÷ 4 = 64 endereços por sub-rede</text><text x="42" y="182" class="sv-code sv-code-soft" xml:space="preserve">64 − 2 = 62 hosts utilizáveis</text><text x="280" y="234" class="sv-legend">O “192” da máscara é 256 − 64, o tamanho do bloco.</text>
 </svg></div>
     </section>
-<section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Onde houver dica de <b>como pensar</b>, use-a antes de escrever.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Na janela de impressão, escolha <b>Destino: Salvar como PDF</b> e salve como <b>NOME_TURMA_S16A2</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
-      </ol>
-    </div>
-  </section>
+</section>
+<section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
     <div class="sec-head"><span class="n">PASSO 0</span><h2>Identificação</h2></div>
     <p class="lead">Estes dados montam a capa e a folha de rosto do relatório em PDF.</p>
@@ -438,8 +452,7 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="sec-head"><span class="n">REFERÊNCIAS</span><h2>De onde veio o conteúdo desta aula</h2></div>
     <ul class="refs"><li>Apostila da disciplina — Capítulo 16 — Endereçamento IPv4 – Sub-rede e CIDR.</li><li><b>Leitura complementar (Kurose &amp; Ross):</b> KUROSE, J. F.; ROSS, K. W. <i>Redes de Computadores e a Internet</i>. Pearson, 2013 — Cap. 4, §4.4.2 (Endereçamento IPv4 — revisão), p. 249–259.</li><li>Cisco Networking Academy — <i>CCNA: Introduction to Networks</i> (netacad.com).</li><li>KUROSE, J. F.; ROSS, K. W. <i>Redes de computadores e a internet</i>. São Paulo: Pearson, 2013.</li><li>TANENBAUM, A. S.; WETHERALL, D. J. <i>Redes de computadores</i>. São Paulo: Pearson, 2011.</li><li>Apostila <b>Cisco Packet Tracer para Iniciantes</b> desta mesma série.</li><li>SEDUC-SP — Registro de Aula S16A2.</li></ul>
   </section>
-
-  
+</section>
   <nav class="navAtiv">
     <a class="" href="redes-15-s15a3.html">
           <span class="rot">← Anterior · Semana 15</span>
@@ -743,6 +756,19 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
   window.addEventListener("beforeprint", montarRelatorio);
 
   carregar(); pintarChecks();
+})();
+</script>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabs button'));
+  function show(name){
+    if(!document.getElementById(name)) name='como';
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.tab===name)); });
+    document.querySelectorAll('section.tab').forEach(function(s){ s.hidden = s.id!==name; });
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.tab); }); });
+  show('como');
 })();
 </script>
 </body>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%90%3C/text%3E%3C/svg%3E">
 <title>Desenhando uma rede virtual na nuvem (VPC/VNet) — Registro de Aula S21A2 — Semana 21</title>
 <style>
 :root{
@@ -293,6 +294,13 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
   #roteiro th{background:#e8e8e8;color:#000;text-transform:none;font-variant:small-caps;letter-spacing:0}
   #roteiro .checkline{margin-bottom:1.5mm;font-size:11pt}
 }
+
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;background:var(--bg);padding:8px 0;border-bottom:2px solid var(--border-strong);margin-bottom:6px}
+.tabs{scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:1.5px solid var(--border-strong);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font-weight:600;white-space:nowrap;cursor:pointer;font:inherit}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+section.tab{display:flex;flex-direction:column;gap:16px}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -304,13 +312,18 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="sub">Registro de Aula S21A2 — Semana 21 · Aula 2 – Desenhando uma rede virtual na nuvem (VPC/VNet)</div>
     <div class="chips"><span class="chip">Unidade <b>21 – Redes definidas por software e redes na nuvem</b></span><span class="chip">Base: <b>Capítulo 21 — Redes definidas por software e redes na nuvem</b></span><span class="chip">Tempo: <b>45 min</b></span><span class="chip">Entrega: <b>AVA</b></span><span class="chip">Arquivo: <b>NOME_TURMA_S21A2</b></span></div>
   </header>
+  <nav class="tabs" role="tablist" aria-label="Partes da atividade">
+    <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
+    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
+  </nav>
 
-  <section>
+<section class="tab" id="como" role="tabpanel">
+<section>
     <div class="sec-head"><span class="n">ATIVIDADE PROPOSTA</span><h2>O que vocês vão resolver</h2></div>
     <p class="lead" style="color:var(--ink);font-size:15.5px">A empresa TechNova vai migrar seus servidores locais para a nuvem pública e precisa de uma rede segura e isolada: um servidor web acessível pela internet e um banco de dados acessível apenas pelo servidor web, nunca diretamente pela internet.</p>
   </section>
-
-  <section>
+<section>
     <div class="sec-head"><span class="n">OBJETIVOS</span><h2>O que vocês vão aprender aqui</h2></div>
     <ul class="objetivos">
       <li><span class="tick">✓</span><span>compreender como os conceitos de SDN são aplicados na criação de redes virtuais em provedores de nuvem pública (AWS, Azure, GCP);</span></li>
@@ -319,8 +332,7 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
       <li><span class="tick">✓</span><span>justificar por que o isolamento de uma VPC/VNet protege a empresa de outros clientes da mesma nuvem.</span></li>
     </ul>
   </section>
-
-  <section>
+<section>
     <div class="sec-head"><span class="n">SOLUÇÃO DIGITAL</span><h2>Ferramenta usada nesta aula</h2></div>
     <div class="ferramenta">
       <div class="marca">WEB</div>
@@ -330,8 +342,22 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
       </div>
     </div>
   </section>
-
-  <section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia a história da TechNova e observe o desenho de referência.</span></li>
+        <li><span class="num">2</span><span>Preencha o Passo 0: escola, grupo, integrantes, professor e data.</span></li>
+        <li><span class="num">3</span><span>Passo 1: desenhe a rede no papel (ou no computador). Depois, escreva uma frase descrevendo o que você desenhou.</span></li>
+        <li><span class="num">4</span><span>Passo 2: escreva as duas regras. Uma para o servidor web e uma para o banco de dados.</span></li>
+        <li><span class="num">5</span><span>Passo 3: responda às 3 perguntas. Uma ou duas frases para cada uma.</span></li>
+        <li><span class="num">6</span><span>Confira o checklist, gere o PDF e envie no AVA.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="diagrama" role="tabpanel" hidden>
+<section>
     <div class="sec-head"><span class="n">ENTENDA</span><h2>Na nuvem, a rede é um desenho de software</h2></div>
     <p class="lead">Não se compram cabos: a rede é descrita por software (painel web ou código) e o provedor traduz essa descrição para os equipamentos físicos usando SDN.</p>
     <div class="visual"><svg viewBox="0 0 690 300" class="sv" role="img" aria-label="Desenho lógico de uma VPC na nuvem: a internet entra pelo gateway até a sub-rede pública, onde está o servidor web; o vRouter liga a sub-rede pública à sub-rede privada, onde está o banco de dados">
@@ -359,22 +385,9 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
   <text x="418" y="248" class="sv-mini">só do servidor web</text>
 </svg><div class="cap">Desenho lógico de referência. A internet só entra pela sub-rede pública; o banco fica na sub-rede privada e só aceita conexão vinda do servidor web.</div></div>
   </section>
-
-  <section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia a história da TechNova e observe o desenho de referência.</span></li>
-        <li><span class="num">2</span><span>Preencha o Passo 0: escola, grupo, integrantes, professor e data.</span></li>
-        <li><span class="num">3</span><span>Passo 1: desenhe a rede no papel (ou no computador). Depois, escreva uma frase descrevendo o que você desenhou.</span></li>
-        <li><span class="num">4</span><span>Passo 2: escreva as duas regras. Uma para o servidor web e uma para o banco de dados.</span></li>
-        <li><span class="num">5</span><span>Passo 3: responda às 3 perguntas. Uma ou duas frases para cada uma.</span></li>
-        <li><span class="num">6</span><span>Confira o checklist, gere o PDF e envie no AVA.</span></li>
-      </ol>
-    </div>
-  </section>
-
-  <section>
+</section>
+<section class="tab" id="relatorio-tab" role="tabpanel" hidden>
+<section>
     <div class="sec-head"><span class="n">PASSO 0</span><h2>Identificação</h2></div>
     <p class="lead">Estes dados montam a capa e a folha de rosto do relatório em PDF.</p>
     <div class="ident"><div><label class="f" for="id0">Escola</label>
@@ -385,8 +398,7 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
        <input type="text" id="id4" data-campo="id4" data-idk="integrantes"></div><div><label class="f" for="id5">Data</label>
        <input type="text" id="id5" data-campo="id5" data-idk="data"></div></div>
   </section>
-
-  <section>
+<section>
     <div class="sec-head"><span class="n">PROCEDIMENTOS</span><h2>Desenvolvam a atividade</h2></div>
     <div class="passo">
         <div class="passo-top">
@@ -416,8 +428,7 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
         <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual a principal vantagem de desenhar a rede por software, em vez de comprar cabos e roteadores?"><label class="f" for="c5">3. Qual a principal vantagem de desenhar a rede por software, em vez de comprar cabos e roteadores?</label><input type="text" id="c5" data-campo="c5" placeholder=""></div>
       </div>
   </section>
-
-  <section>
+<section>
     <div class="sec-head"><span class="n">CONFIRA</span><h2>Checklist antes de gerar o PDF</h2></div>
     <div class="progresso" id="progresso"></div>
     <label class="check"><input type="checkbox" data-check="0"><span>Todos os passos da atividade foram respondidos.</span></label><label class="check"><input type="checkbox" data-check="1"><span>As respostas usam os dados do cenário, e não explicações genéricas.</span></label><label class="check"><input type="checkbox" data-check="2"><span>As justificativas explicam o porquê de cada escolha.</span></label><label class="check"><input type="checkbox" data-check="3"><span>Vamos salvar o PDF como NOME_TURMA_S21A2 e enviar no AVA.</span></label>
@@ -428,20 +439,18 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
       <b>NOME_TURMA_S21A2</b> e envie no AVA. Antes de salvar, clique em <b>Mais configurações</b> e desmarque <b>Cabeçalhos e rodapés</b> — assim o PDF não sai com o endereço da página.
     </div>
   </section>
-
-  <section>
+<section>
     <div class="sec-head"><span class="n">AVALIAÇÃO</span><h2>Como esta atividade será avaliada</h2></div>
     <div class="tabWrap"><table class="criterios">
       <thead><tr><th>Critério</th><th>Pontos</th></tr></thead>
       <tbody><tr><td>Domínio técnico: respostas corretas e coerentes com o cenário</td><td>5,0</td></tr><tr><td>Justificativas: o grupo explica o porquê de cada escolha</td><td>3,0</td></tr><tr><td>Completude: todos os passos e campos preenchidos</td><td>1,0</td></tr><tr><td>Clareza e organização do relatório</td><td>1,0</td></tr></tbody>
     </table></div>
   </section>
-
-  <section>
+<section>
     <div class="sec-head"><span class="n">REFERÊNCIAS</span><h2>De onde veio o conteúdo desta aula</h2></div>
     <ul class="refs"><li>Apostila da disciplina — Capítulo 21 — Redes definidas por software e redes na nuvem.</li><li>SEDUC-SP — Roteiro de Atividade Prática S21A2AP: "Desenhando uma rede virtual na nuvem (VPC/VNet)".</li></ul>
   </section>
-
+</section>
   <nav class="navAtiv">
     <a class="" href="redes-20-s20a3.html">
           <span class="rot">← Anterior · Semana 20</span>
@@ -748,5 +757,18 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
 })();
 </script>
 
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabs button'));
+  function show(name){
+    if(!document.getElementById(name)) name='como';
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.tab===name)); });
+    document.querySelectorAll('section.tab').forEach(function(s){ s.hidden = s.id!==name; });
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.tab); }); });
+  show('como');
+})();
+</script>
 </body>
 </html>

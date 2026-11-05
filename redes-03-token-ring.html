@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%90%3C/text%3E%3C/svg%3E">
 <title>Simulando problemas no Token Ring — Registro de Aula 03 — Semana 3</title>
 <style>
 :root{
@@ -293,6 +294,13 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
   #roteiro th{background:#e8e8e8;color:#000;text-transform:none;font-variant:small-caps;letter-spacing:0}
   #roteiro .checkline{margin-bottom:1.5mm;font-size:11pt}
 }
+
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;background:var(--bg);padding:8px 0;border-bottom:2px solid var(--border-strong);margin-bottom:6px}
+.tabs{scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:1.5px solid var(--border-strong);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font-weight:600;white-space:nowrap;cursor:pointer;font:inherit}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+section.tab{display:flex;flex-direction:column;gap:16px}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -304,16 +312,18 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="sub">Registro de Aula 03 — Semana 3 · Aula 2 – Token Ring: token, monitor e redundância</div>
     <div class="chips"><span class="chip">Unidade <b>3 – Topologia em Anel</b></span><span class="chip">Base: <b>Capítulo 3 — Topologia em Anel</b></span><span class="chip">Tempo: <b>35 a 40 min</b></span><span class="chip">Entrega: <b>AVA (foto ou documento)</b></span><span class="chip">Arquivo: <b>NOME_TURMA_S03A1</b></span></div>
   </header>
+  <nav class="tabs" role="tablist" aria-label="Partes da atividade">
+    <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
+    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
+  </nav>
 
-  <section>
+<section class="tab" id="como" role="tabpanel">
+<section>
     <div class="sec-head"><span class="n">ATIVIDADE PROPOSTA</span><h2>O que vocês vão resolver</h2></div>
     <p class="lead" style="color:var(--ink);font-size:15.5px">A turma vira um <b>anel Token Ring</b>: formem um círculo, escolham quem será o <b>Monitor</b> e quem serão as <b>Estações</b>. O professor vai entregar, em segredo, uma instrução de falha para três estações. Vocês simulam um cenário normal e três com falha, e registram o que aconteceu.</p>
   </section>
-
-  
-
-
-  <section>
+<section>
     <div class="sec-head"><span class="n">OBJETIVOS</span><h2>O que vocês vão aprender aqui</h2></div>
     <ul class="objetivos">
       <li><span class="tick">✓</span><span>compreender a estrutura física e lógica da topologia em anel;</span></li><li><span class="tick">✓</span><span>explicar a comunicação ponto a ponto e o papel do buffer em cada nó;</span></li><li><span class="tick">✓</span><span>entender o funcionamento do token e do protocolo Token Ring;</span></li><li><span class="tick">✓</span><span>comparar Token Ring (determinístico) com Ethernet/CSMA/CD;</span></li><li><span class="tick">✓</span><span>calcular a distância média, em saltos, em uma rede em anel;</span></li><li><span class="tick">✓</span><span>reconhecer situações em que o determinismo do anel ainda compensa.</span></li>
@@ -330,6 +340,16 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
       </div>
     </div>
   </section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S03A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Como o anel funciona</h2></div>
       <p class="lead">Só quem está com o token pode transmitir — por isso não existe colisão. O token circula sempre no mesmo sentido, dando a vez a cada estação por rodízio.</p>
@@ -377,14 +397,8 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
       </g><text x="345" y="156" class="sv-legend">As instruções secretas do professor costumam cair em uma destas três situações.</text>
 </svg></div>
     </section>
-<section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S03A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
-      </ol>
-    </div>
-  </section>
+</section>
+<section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
     <div class="sec-head"><span class="n">PASSO 0</span><h2>Identificação</h2></div>
     <p class="lead">Estes dados montam a capa e a folha de rosto do relatório em PDF.</p>
@@ -468,8 +482,7 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
     <div class="sec-head"><span class="n">REFERÊNCIAS</span><h2>De onde veio o conteúdo desta aula</h2></div>
     <ul class="refs"><li>Apostila da disciplina — Capítulo 3 — Topologia em Anel.</li><li><b>Leitura complementar (Kurose &amp; Ross):</b> KUROSE, J. F.; ROSS, K. W. <i>Redes de Computadores e a Internet</i>. Pearson, 2013 — Cap. 5, §5.3.3 (Protocolos de revezamento — token), p. 340–341.</li><li>IEEE 802.5 — <i>Token ring access method</i>.</li><li>Cisco Networking Academy — <i>Introduction to Networks</i>.</li><li>TANENBAUM, A. S.; WETHERALL, D. <i>Redes de Computadores</i>. Pearson.</li><li>SEDUC-SP — Registro de Aula 03.</li></ul>
   </section>
-
-  
+</section>
   <nav class="navAtiv">
     <a class="" href="redes-02-consultoria.html">
           <span class="rot">← Anterior · Semana 2</span>
@@ -773,6 +786,19 @@ table.criterios td:last-child{font-family:var(--mono);text-align:right;white-spa
   window.addEventListener("beforeprint", montarRelatorio);
 
   carregar(); pintarChecks();
+})();
+</script>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabs button'));
+  function show(name){
+    if(!document.getElementById(name)) name='como';
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.tab===name)); });
+    document.querySelectorAll('section.tab').forEach(function(s){ s.hidden = s.id!==name; });
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.tab); }); });
+  show('como');
 })();
 </script>
 </body>
