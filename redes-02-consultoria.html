@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -340,16 +340,6 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </div>
     </div>
   </section>
-<section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S02A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
-      </ol>
-    </div>
-  </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Como o barramento funciona — e onde ele falha</h2></div>
       <p class="lead">No barramento todos dividem o mesmo cabo. É a topologia mais barata, mas o cabo é ponto único de falha, todo mundo “escuta” tudo, e quanto mais estações, mais colisões.</p>
@@ -387,20 +377,97 @@ section.tab{display:flex;flex-direction:column;gap:16px}
         <rect x="0" y="0" width="218" height="130" rx="11" class="sv-box sv-band-0"/>
         <text x="109" y="26" class="sv-card-key">Cliente A</text>
         <text x="109" y="43.5" class="sv-label">Fazenda remota, 5</text><text x="109" y="60.5" class="sv-label">sensores em 1 km</text>
-        <text x="109" y="96" class="sv-legend sv-small">o dado decisivo é a DISTÂNCIA</text>
+        <text x="109" y="96" class="sv-legend sv-small">qual é o dado decisivo?</text>
       </g><g>
         <rect x="236" y="0" width="218" height="130" rx="11" class="sv-box sv-band-1"/>
         <text x="345" y="26" class="sv-card-key">Cliente B</text>
         <text x="345" y="43.5" class="sv-label">Advocacia, 15 PCs, dados</text><text x="345" y="60.5" class="sv-label">sigilosos</text>
-        <text x="345" y="96" class="sv-legend sv-small">o dado decisivo é o SIGILO</text>
+        <text x="345" y="96" class="sv-legend sv-small">qual é o dado decisivo?</text>
       </g><g>
         <rect x="472" y="0" width="218" height="130" rx="11" class="sv-box sv-band-2"/>
         <text x="581" y="26" class="sv-card-key">Cliente C</text>
         <text x="581" y="43.5" class="sv-label">Lab. maker, 10 PCs,</text><text x="581" y="60.5" class="sv-label">orçamento mínimo</text>
-        <text x="581" y="96" class="sv-legend sv-small">o dado decisivo é o CUSTO</text>
+        <text x="581" y="96" class="sv-legend sv-small">qual é o dado decisivo?</text>
       </g><text x="345" y="156" class="sv-legend">Em cada cenário existe uma palavra que decide a resposta. Encontrem essa palavra antes de responder.</text>
 </svg></div>
     </section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S02A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>O roteiro de cada consultoria</h2></div>
+  <p class="lead">Os três clientes passam pelo mesmo roteiro, um de cada vez. Primeiro encontrem o dado que decide o caso. Depois perguntem se o barramento lida bem com ele. Quando não lida, o roteiro pede uma alternativa e uma comparação de custo. A conclusão só vem quando os três estiverem avaliados.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 560" class="sv" role="img" aria-label="Fluxograma da consultoria: início; pegar o próximo cliente; encontrar o dado decisivo do cenário; perguntar se o barramento lida bem com esse dado; se sim, registrar que é viável e a vantagem; se não, registrar o problema, propor uma alternativa e comparar o custo dela com o do barramento; depois, se ainda faltar cliente, voltar ao começo; quando os três estiverem avaliados, comparar as três respostas e terminar">
+      <defs>
+        <marker id="fr02-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 60" class="sv-arrow" marker-end="url(#fr02-head)"/>
+      <rect x="60" y="60" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="79" class="sv-label sv-small">Pegar o próximo cliente</text>
+      <text x="200" y="96" class="sv-label sv-small">(A, depois B, depois C)</text>
+      <path d="M200 106 L200 122" class="sv-arrow" marker-end="url(#fr02-head)"/>
+      <rect x="60" y="122" width="280" height="32" rx="8" class="sv-box-no"/>
+      <text x="200" y="143" class="sv-label sv-small">Encontrar o dado decisivo</text>
+      <path d="M200 154 L200 172" class="sv-arrow" marker-end="url(#fr02-head)"/>
+
+      <polygon points="200,172 320,204 200,236 80,204" class="sv-diamond"/>
+      <text x="200" y="200" class="sv-label sv-small">O barramento lida</text>
+      <text x="200" y="216" class="sv-label sv-small">bem com esse dado?</text>
+      <path d="M320 204 L400 204" class="sv-arrow" marker-end="url(#fr02-head)"/>
+      <text x="346" y="196" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="181" width="220" height="46" rx="8" class="sv-box-ok"/>
+      <text x="510" y="200" class="sv-label sv-small">Viável: registrar</text>
+      <text x="510" y="217" class="sv-label sv-small">a vantagem e o custo</text>
+      <path d="M510 227 L510 392 L204 392" class="sv-arrow" marker-end="url(#fr02-head)"/>
+
+      <path d="M200 236 L200 254" class="sv-arrow" marker-end="url(#fr02-head)"/>
+      <text x="210" y="250" class="sv-tag sv-no">F</text>
+      <rect x="60" y="254" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="275" class="sv-label sv-small">Registrar o problema</text>
+      <path d="M200 286 L200 300" class="sv-arrow" marker-end="url(#fr02-head)"/>
+      <rect x="60" y="300" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="321" class="sv-label sv-small">Propor uma alternativa</text>
+      <path d="M200 332 L200 346" class="sv-arrow" marker-end="url(#fr02-head)"/>
+      <rect x="60" y="346" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="367" class="sv-label sv-small">Comparar o custo com o barramento</text>
+      <path d="M200 378 L200 404" class="sv-arrow" marker-end="url(#fr02-head)"/>
+
+      <polygon points="200,404 320,434 200,464 80,434" class="sv-diamond"/>
+      <text x="200" y="430" class="sv-label sv-small">Falta algum</text>
+      <text x="200" y="446" class="sv-label sv-small">cliente?</text>
+      <path d="M80 434 L24 434 L24 50 L196 50" class="sv-arrow sv-arrow-soft" marker-end="url(#fr02-head)"/>
+      <text x="52" y="426" class="sv-tag sv-ok">V</text>
+      <text x="54" y="240" class="sv-tag sv-no">próximo</text>
+      <path d="M200 464 L200 482" class="sv-arrow" marker-end="url(#fr02-head)"/>
+      <text x="210" y="478" class="sv-tag sv-no">F</text>
+      <rect x="60" y="482" width="280" height="32" rx="8" class="sv-box-ok"/>
+      <text x="200" y="503" class="sv-label sv-small">Comparar os três (Passo 4)</text>
+      <path d="M200 514 L200 528" class="sv-arrow" marker-end="url(#fr02-head)"/>
+      <rect x="100" y="528" width="200" height="28" rx="14" class="sv-box-ok"/>
+      <text x="200" y="547" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">Cada cliente percorre o desenho uma vez, e cada volta preenche um dos três primeiros passos do Relatório. O caminho que cada um segue no losango é o que vocês precisam decidir e justificar.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>A caixa laranja é o passo mais importante: cada cenário tem uma palavra que decide o caso. O cartão dos três clientes, na aba Como fazer, pede exatamente isso.</span></li>
+      <li><span class="num">2</span><span>Para responder ao losango, usem o diagrama do barramento da aba Como fazer: o que acontece com um cabo único, com o sinal que vai para todos e com as colisões.</span></li>
+      <li><span class="num">3</span><span>No caminho F, o passo recebe o problema, a alternativa e o custo. No caminho V, recebe a vantagem, e o custo também precisa ser indicado: o checklist pede a categoria de custo para os três clientes.</span></li>
+      <li><span class="num">4</span><span>O Passo 4 compara as três voltas: o mesmo barramento pode ter seguido caminhos diferentes no losango. Por quê?</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
@@ -422,7 +489,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">1</span>
           <div class="passo-txt">Cliente A — fazenda remota, 5 sensores de solo espalhados por 1 km.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Barramento é barato, mas o sinal se degrada com a distância. 1 km é muito para um único cabo de cobre.</div>
+        <div class="dica"><b>Como pensar:</b> Barramento é barato, mas o que acontece com um sinal elétrico ao longo de 1 km de um único cabo de cobre?</div>
         <div class="campoWrap" data-rel="campo" data-rotulo="Cliente A — Viável?"><label class="f" for="c0">Barramento é viável?</label><select id="c0" data-campo="c0">
       <option value="">— escolha —</option>
       <option value="Sim">Sim</option><option value="Não">Não</option>
@@ -435,7 +502,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">2</span>
           <div class="passo-txt">Cliente B — escritório de advocacia, 15 computadores, dados sigilosos.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> No barramento o sinal chega a todos os equipamentos: qualquer máquina do cabo consegue “escutar” o tráfego dos outros.</div>
+        <div class="dica"><b>Como pensar:</b> No barramento, quando uma máquina transmite, para onde vai o sinal? Pensem no que isso significa para dados sigilosos.</div>
         <div class="campoWrap" data-rel="campo" data-rotulo="Cliente B — Viável?"><label class="f" for="c4">Barramento é viável?</label><select id="c4" data-campo="c4">
       <option value="">— escolha —</option>
       <option value="Sim">Sim</option><option value="Não">Não</option>
