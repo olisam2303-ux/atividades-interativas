@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -341,19 +341,9 @@ section.tab{display:flex;flex-direction:column;gap:16px}
     </div>
   </section>
 <section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S05A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
-      </ol>
-    </div>
-  </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
-<section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>O que decide o cabo de cada setor</h2></div>
       <p class="lead">Duas perguntas resolvem quase todo projeto: quanta interferência eletromagnética existe ali, e quanta velocidade aquele setor precisa hoje e daqui a alguns anos.</p>
-      <div class="visual"><svg viewBox="0 0 454 162" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
+      <div class="visual"><svg viewBox="0 0 454 178" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
       <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
@@ -372,7 +362,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
         <text x="345" y="26" class="sv-card-key">STP</text>
         <text x="345" y="52" class="sv-label">Com blindagem metálica</text>
         <text x="345" y="81" class="sv-legend sv-small">mais caro e exige aterramento</text><text x="345" y="96" class="sv-legend sv-small">· indústria, hospital, data</text><text x="345" y="111" class="sv-legend sv-small">center</text>
-      </g><text x="227" y="156" class="sv-legend">Sem aterramento, a blindagem do STP pode virar antena e piorar o ruído — blindagem mal instalada é pior que UTP.</text>
+      </g><text x="227" y="156" class="sv-legend">Sem aterramento, a blindagem do STP pode virar antena e piorar</text><text x="227" y="172" class="sv-legend">o ruído — blindagem mal instalada é pior que UTP.</text>
 </svg></div><div class="visual"><svg viewBox="0 0 720 178" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
@@ -405,6 +395,98 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </g><text x="360" y="146" class="sv-legend">Para instalações novas o mínimo recomendado é Cat6. Trocar de categoria NÃO aumenta o alcance: o limite</text><text x="360" y="162" class="sv-legend">de 100 m (90 m fixos + 10 m de patch cords) vale para todas.</text>
 </svg></div>
     </section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S05A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>O raciocínio de cada setor</h2></div>
+  <p class="lead">Os quatro setores do cenário passam pelas mesmas três perguntas, nesta ordem. A interferência decide o tipo de cabo. A velocidade, de hoje e do futuro, decide a categoria. A distância decide se o cabo sozinho dá conta do trecho. Cada volta preenche uma linha da tabela do Passo 2.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 684" class="sv" role="img" aria-label="Fluxograma do projeto de cabeamento: início; escolher o cenário; pegar o próximo setor; se houver muita interferência eletromagnética, cabo STP com aterramento; senão, UTP; definir a velocidade de hoje e do futuro e escolher a categoria; se a distância até o switch passar do limite da norma, resolver a distância; registrar cabo, categoria e porquê; se faltar setor, voltar; depois, plano de crescimento e fim">
+      <defs>
+        <marker id="fr05-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <rect x="60" y="54" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="75" class="sv-label sv-small">Escolher o cenário</text>
+      <text x="34" y="74" class="sv-tag sv-ok">P1</text>
+      <path d="M200 86 L200 106" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <rect x="60" y="106" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="127" class="sv-label sv-small">Pegar o próximo setor</text>
+      <text x="34" y="126" class="sv-tag sv-ok">P2</text>
+      <path d="M200 138 L200 154" class="sv-arrow" marker-end="url(#fr05-head)"/>
+
+      <polygon points="200,154 320,186 200,218 80,186" class="sv-diamond"/>
+      <text x="200" y="182" class="sv-label sv-small">Muita interferência</text>
+      <text x="200" y="198" class="sv-label sv-small">eletromagnética?</text>
+      <path d="M320 186 L400 186" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <text x="346" y="178" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="163" width="220" height="46" rx="8" class="sv-box-no"/>
+      <text x="510" y="182" class="sv-label sv-small">STP, com</text>
+      <text x="510" y="199" class="sv-label sv-small">aterramento</text>
+      <path d="M510 209 L510 252 L204 252" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <path d="M200 218 L200 236" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <text x="210" y="232" class="sv-tag sv-no">F</text>
+      <rect x="120" y="236" width="160" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="257" class="sv-label sv-small">UTP</text>
+      <path d="M200 268 L200 286" class="sv-arrow" marker-end="url(#fr05-head)"/>
+
+      <rect x="60" y="286" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="305" class="sv-label sv-small">Velocidade de hoje e</text>
+      <text x="200" y="322" class="sv-label sv-small">dos próximos 5 a 10 anos</text>
+      <path d="M200 332 L200 346" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <rect x="60" y="346" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="367" class="sv-label sv-small">Escolher a categoria</text>
+      <path d="M200 378 L200 394" class="sv-arrow" marker-end="url(#fr05-head)"/>
+
+      <polygon points="200,394 320,426 200,458 80,426" class="sv-diamond"/>
+      <text x="200" y="422" class="sv-label sv-small">A distância cabe</text>
+      <text x="200" y="438" class="sv-label sv-small">no limite da norma?</text>
+      <path d="M320 426 L400 426" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <text x="346" y="418" class="sv-tag sv-no">F</text>
+      <rect x="400" y="403" width="220" height="46" rx="8" class="sv-box"/>
+      <text x="510" y="422" class="sv-label sv-small">Resolver a distância</text>
+      <text x="510" y="439" class="sv-label sv-small">(o caso do Passo 3)</text>
+      <path d="M510 449 L510 484 L204 484" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <path d="M200 458 L200 492" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <text x="210" y="474" class="sv-tag sv-ok">V</text>
+
+      <rect x="60" y="492" width="280" height="32" rx="8" class="sv-box-ok"/>
+      <text x="200" y="513" class="sv-label sv-small">Registrar cabo, categoria e porquê</text>
+      <path d="M200 524 L200 538" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <polygon points="200,538 300,560 200,582 100,560" class="sv-diamond"/>
+      <text x="200" y="565" class="sv-label sv-small">Falta setor?</text>
+      <path d="M100 560 L24 560 L24 96 L196 96" class="sv-arrow sv-arrow-soft" marker-end="url(#fr05-head)"/>
+      <text x="72" y="552" class="sv-tag sv-ok">V</text>
+      <path d="M200 582 L200 596" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <text x="210" y="592" class="sv-tag sv-no">F</text>
+      <rect x="60" y="596" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="617" class="sv-label sv-small">Plano de crescimento (P4)</text>
+      <path d="M200 628 L200 644" class="sv-arrow" marker-end="url(#fr05-head)"/>
+      <rect x="100" y="644" width="200" height="30" rx="15" class="sv-box-ok"/>
+      <text x="200" y="664" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">A caixa laranja lembra o detalhe do cartão UTP × STP: blindagem sem aterramento piora o ruído. O losango da distância vale para qualquer categoria, porque trocar de categoria não aumenta o alcance.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>O primeiro losango depende do cenário: o mesmo nome de setor pode ter mais ou menos interferência num hospital, numa escola ou numa indústria.</span></li>
+      <li><span class="num">2</span><span>A categoria vem depois do tipo de cabo e olha para o futuro, não só para hoje. Usem a régua das categorias da aba Como fazer.</span></li>
+      <li><span class="num">3</span><span>O losango da distância é o Passo 3: a caixa “Resolver a distância” é onde entra a solução de vocês para o ponto a 95 m.</span></li>
+      <li><span class="num">4</span><span>O plano de crescimento (Passo 4) aparece no fim, mas as decisões que ele usa foram tomadas em cada volta, na escolha da categoria.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
@@ -453,7 +535,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">4</span>
           <div class="passo-txt">Como o projeto prevê o crescimento dos próximos 5 a 10 anos?</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Pensem em deixar portas e cabos sobrando, ou em escolher uma categoria acima do mínimo necessário hoje — refazer cabeamento depois custa muito mais caro.</div>
+        <div class="dica"><b>Como pensar:</b> Refazer o cabeamento depois de pronto custa muito mais caro. O que dá para decidir hoje, na instalação, para a rede aguentar o dobro de uso daqui a alguns anos?</div>
         <div class="campoWrap" data-rel="campo" data-rotulo="Escalabilidade (5 a 10 anos)"><label class="f" for="c4">Plano de escalabilidade</label><textarea id="c4" data-campo="c4" rows="3" placeholder=""></textarea></div>
       </div>
   </section>
