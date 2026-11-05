@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -340,16 +340,6 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </div>
     </div>
   </section>
-<section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S01A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
-      </ol>
-    </div>
-  </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>As cinco topologias que vocês podem escolher</h2></div>
       <p class="lead">Não existe topologia “melhor”: existe a mais adequada a um orçamento, a uma criticidade e a um plano de crescimento. Compare as cinco antes de decidir.</p>
@@ -405,6 +395,99 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </g><text x="345" y="156" class="sv-legend">A topologia escolhida precisa responder às TRÊS restrições — não apenas à que o grupo achar mais fácil.</text>
 </svg></div>
     </section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S01A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Como decidir a topologia</h2></div>
+  <p class="lead">A escolha da topologia é um filtro com três perguntas, uma para cada restrição do cenário. A topologia candidata só chega à escolha final se passar pelas três. Se reprovar em qualquer uma, ela é descartada e o grupo testa outra. Mudar de ideia faz parte do processo.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 592" class="sv" role="img" aria-label="Fluxograma da escolha de topologia: início; escolher uma topologia candidata; perguntar se ela aguenta dobrar de tamanho em um ano, se o resto continua funcionando quando um cabo falha e se cabe num orçamento médio; se qualquer resposta for não, descartar e escolher outra candidata; se as três forem sim, a topologia principal está definida; depois, se houver vários andares ou setores, combinar topologias numa híbrida; senão, manter só a principal; fim">
+      <defs>
+        <marker id="fr01-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 56" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <rect x="60" y="56" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="75" class="sv-label sv-small">Escolher uma topologia</text>
+      <text x="200" y="92" class="sv-label sv-small">candidata</text>
+      <text x="34" y="83" class="sv-tag sv-ok">P1</text>
+      <path d="M200 102 L200 120" class="sv-arrow" marker-end="url(#fr01-head)"/>
+
+      <polygon points="200,120 320,150 200,180 80,150" class="sv-diamond"/>
+      <text x="200" y="146" class="sv-label sv-small">Aguenta dobrar</text>
+      <text x="200" y="162" class="sv-label sv-small">em 1 ano?</text>
+      <text x="34" y="154" class="sv-tag sv-ok">P2</text>
+      <path d="M200 180 L200 200" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <text x="210" y="196" class="sv-tag sv-ok">V</text>
+      <polygon points="200,200 320,230 200,260 80,230" class="sv-diamond"/>
+      <text x="200" y="226" class="sv-label sv-small">Um cabo falha e</text>
+      <text x="200" y="242" class="sv-label sv-small">o resto continua?</text>
+      <text x="34" y="234" class="sv-tag sv-ok">P3</text>
+      <path d="M200 260 L200 280" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <text x="210" y="276" class="sv-tag sv-ok">V</text>
+      <polygon points="200,280 320,310 200,340 80,310" class="sv-diamond"/>
+      <text x="200" y="306" class="sv-label sv-small">Cabe num</text>
+      <text x="200" y="322" class="sv-label sv-small">orçamento médio?</text>
+      <text x="34" y="314" class="sv-tag sv-ok">P4</text>
+
+      <path d="M320 150 L370 150 M320 230 L370 230 M320 310 L370 310 M370 150 L370 310" class="sv-arrow"/>
+      <text x="344" y="142" class="sv-tag sv-no">F</text>
+      <text x="344" y="222" class="sv-tag sv-no">F</text>
+      <text x="344" y="302" class="sv-tag sv-no">F</text>
+      <path d="M370 230 L400 230" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <rect x="400" y="207" width="220" height="46" rx="8" class="sv-box-no"/>
+      <text x="510" y="226" class="sv-label sv-small">Descartar e escolher</text>
+      <text x="510" y="243" class="sv-label sv-small">outra candidata</text>
+      <path d="M510 207 L510 79 L344 79" class="sv-arrow sv-arrow-soft" marker-end="url(#fr01-head)"/>
+      <text x="560" y="140" class="sv-tag sv-no">testar outra</text>
+
+      <path d="M200 340 L200 358" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <text x="210" y="354" class="sv-tag sv-ok">V</text>
+      <rect x="60" y="358" width="280" height="46" rx="8" class="sv-box-ok"/>
+      <text x="200" y="377" class="sv-label sv-small">Topologia principal</text>
+      <text x="200" y="394" class="sv-label sv-small">definida</text>
+      <text x="34" y="385" class="sv-tag sv-ok">P5</text>
+      <path d="M200 404 L200 422" class="sv-arrow" marker-end="url(#fr01-head)"/>
+
+      <polygon points="200,422 320,452 200,482 80,452" class="sv-diamond"/>
+      <text x="200" y="448" class="sv-label sv-small">Vários andares</text>
+      <text x="200" y="464" class="sv-label sv-small">ou setores?</text>
+      <text x="34" y="456" class="sv-tag sv-ok">P6</text>
+      <path d="M320 452 L400 452" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <text x="346" y="444" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="429" width="220" height="46" rx="8" class="sv-box"/>
+      <text x="510" y="448" class="sv-label sv-small">Combinar topologias</text>
+      <text x="510" y="465" class="sv-label sv-small">(híbrida)</text>
+      <path d="M510 475 L510 566 L304 566" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <path d="M200 482 L200 500" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <text x="210" y="496" class="sv-tag sv-no">F</text>
+      <rect x="60" y="500" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="521" class="sv-label sv-small">Manter só a principal</text>
+      <path d="M200 532 L200 550" class="sv-arrow" marker-end="url(#fr01-head)"/>
+      <rect x="100" y="550" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="571" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">Os três losangos do meio são as três restrições do cenário. Uma topologia que passa nas duas primeiras e reprova na terceira continua descartada: ela precisa responder às três.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>As marcas P1 a P6 à esquerda são os passos do Relatório. Cada losango é uma pergunta que vocês respondem com “sim” ou “não” e uma justificativa.</span></li>
+      <li><span class="num">2</span><span>Usem os desenhos da aba Como fazer para responder a cada losango. Por exemplo, para o P3, procurem quais topologias têm mais de um caminho entre dois equipamentos.</span></li>
+      <li><span class="num">3</span><span>A seta “testar outra” é a mudança de ideia que o Passo 5 permite. Se ela foi usada, contem isso na justificativa final.</span></li>
+      <li><span class="num">4</span><span>O último losango é o Passo 6: a resposta depende de como vocês imaginam a empresa organizada depois de dobrar de tamanho.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
