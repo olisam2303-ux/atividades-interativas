@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -340,16 +340,6 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </div>
     </div>
   </section>
-<section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S03A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
-      </ol>
-    </div>
-  </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Como o anel funciona</h2></div>
       <p class="lead">Só quem está com o token pode transmitir — por isso não existe colisão. O token circula sempre no mesmo sentido, dando a vez a cada estação por rodízio.</p>
@@ -397,6 +387,91 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </g><text x="345" y="156" class="sv-legend">As instruções secretas do professor costumam cair em uma destas três situações.</text>
 </svg></div>
     </section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Cada passo traz uma dica de <b>como pensar</b> logo abaixo do enunciado.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Abre a janela de impressão do navegador: em <b>Destino</b>, escolha <b>Salvar como PDF</b> e salve como <b>NOME_TURMA_S03A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>O roteiro da dinâmica</h2></div>
+  <p class="lead">A simulação tem uma rodada normal, que serve de referência, e depois três rodadas com falha, uma de cada vez. Em cada rodada com falha só a estação sabe o que vai fazer. O Monitor precisa descobrir observando o anel. Cada volta pelo laço preenche uma linha da tabela do Passo 3.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 586" class="sv" role="img" aria-label="Fluxograma da dinâmica Token Ring: início; definir o Monitor e as estações; rodada normal, com o token dando a volta completa; registrar a rodada normal; depois, enquanto faltar falha, o professor entrega a instrução secreta a uma estação, a turma simula a rodada, e o Monitor diz se percebeu algo diferente; se sim, o Monitor diz que falha foi; se não, registrar que não identificou; registrar na tabela e voltar; quando as três falhas foram simuladas, responder a discussão e terminar">
+      <defs>
+        <marker id="fr03-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <rect x="60" y="54" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="75" class="sv-label sv-small">Definir Monitor e estações</text>
+      <text x="34" y="74" class="sv-tag sv-ok">P1</text>
+      <path d="M200 86 L200 100" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <rect x="60" y="100" width="280" height="46" rx="8" class="sv-box-ok"/>
+      <text x="200" y="119" class="sv-label sv-small">Rodada normal: o token dá</text>
+      <text x="200" y="136" class="sv-label sv-small">a volta completa no anel</text>
+      <text x="34" y="127" class="sv-tag sv-ok">P2</text>
+      <path d="M200 146 L200 160" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <rect x="60" y="160" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="181" class="sv-label sv-small">Registrar a rodada normal</text>
+      <path d="M200 192 L200 212" class="sv-arrow" marker-end="url(#fr03-head)"/>
+
+      <polygon points="200,212 320,242 200,272 80,242" class="sv-diamond"/>
+      <text x="200" y="238" class="sv-label sv-small">Ainda falta</text>
+      <text x="200" y="254" class="sv-label sv-small">simular falha?</text>
+      <text x="34" y="246" class="sv-tag sv-ok">P3</text>
+      <path d="M320 242 L400 242" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <text x="346" y="234" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="219" width="220" height="46" rx="8" class="sv-box-no"/>
+      <text x="510" y="238" class="sv-label sv-small">Professor entrega a</text>
+      <text x="510" y="255" class="sv-label sv-small">instrução secreta</text>
+      <path d="M510 265 L510 281" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <rect x="400" y="281" width="220" height="32" rx="8" class="sv-box"/>
+      <text x="510" y="302" class="sv-label sv-small">Simular a rodada</text>
+      <path d="M510 313 L510 329" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <polygon points="510,329 620,359 510,389 400,359" class="sv-diamond"/>
+      <text x="510" y="355" class="sv-label sv-small">O Monitor percebeu</text>
+      <text x="510" y="371" class="sv-label sv-small">algo diferente?</text>
+      <path d="M510 389 L510 407" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <text x="520" y="403" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="407" width="220" height="32" rx="8" class="sv-box"/>
+      <text x="510" y="428" class="sv-label sv-small">Monitor diz qual falha foi</text>
+      <path d="M400 359 L380 359 L380 455 L506 455" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <text x="390" y="351" class="sv-tag sv-no">F</text>
+      <path d="M510 439 L510 455" class="sv-arrow"/>
+      <rect x="400" y="455" width="220" height="46" rx="8" class="sv-box"/>
+      <text x="510" y="474" class="sv-label sv-small">Registrar na tabela</text>
+      <text x="510" y="491" class="sv-label sv-small">(identificou ou não)</text>
+      <path d="M620 478 L632 478 L632 202 L204 202" class="sv-arrow sv-arrow-soft" marker-end="url(#fr03-head)"/>
+      <text x="580" y="196" class="sv-tag sv-no">próxima falha</text>
+
+      <path d="M200 272 L200 290" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <text x="210" y="286" class="sv-tag sv-no">F</text>
+      <rect x="60" y="290" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="309" class="sv-label sv-small">Discussão: falha mais difícil,</text>
+      <text x="200" y="326" class="sv-label sv-small">Monitor e redundância</text>
+      <text x="34" y="317" class="sv-tag sv-ok">P4–6</text>
+      <path d="M200 336 L200 352" class="sv-arrow" marker-end="url(#fr03-head)"/>
+      <rect x="100" y="352" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="373" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">A rodada normal vem antes de qualquer falha por um motivo: é com ela que o Monitor compara as rodadas seguintes. Sem saber como o anel se comporta quando tudo dá certo, não há como perceber o que mudou.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>A caixa laranja é o segredo da dinâmica: só a estação escolhida sabe a instrução. A turma não comenta até o Monitor dar a resposta.</span></li>
+      <li><span class="num">2</span><span>O losango é a pergunta da última coluna da tabela: “O Monitor identificou?”. Os dois caminhos valem; o importante é registrar o que aconteceu.</span></li>
+      <li><span class="num">3</span><span>Para dizer qual falha foi, o Monitor pode usar o cartão das falhas comuns da aba Como fazer, mas a decisão tem que vir do que ele viu no anel.</span></li>
+      <li><span class="num">4</span><span>As perguntas da discussão (Passos 4 a 6) só vêm depois das três rodadas, porque comparam umas com as outras.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
@@ -449,7 +524,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">5</span>
           <div class="passo-txt">Como o papel do Monitor ajudou a identificar o problema?</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> No Token Ring real, é o monitor que detecta token perdido ou duplicado e “limpa” o anel, gerando um token novo.</div>
+        <div class="dica"><b>Como pensar:</b> No Token Ring real, o monitor tem uma tarefa especial quando o token some ou aparece em dobro. Qual seria? E, na simulação de vocês, o que ele observou que os outros não viram?</div>
         <div class="campoWrap" data-rel="campo" data-rotulo="Papel do Monitor"><label class="f" for="c5">Resposta</label><textarea id="c5" data-campo="c5" rows="2" placeholder=""></textarea></div>
       </div><div class="passo">
         <div class="passo-top">
