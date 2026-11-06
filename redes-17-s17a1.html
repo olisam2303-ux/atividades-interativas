@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -329,8 +329,6 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       <li><span class="tick">✓</span><span>Identificar ativo, ameaça, vulnerabilidade e impacto em um cenário de segurança da informação.</span></li><li><span class="tick">✓</span><span>Compreender como esses quatro elementos se relacionam para formar um risco.</span></li><li><span class="tick">✓</span><span>Avaliar riscos combinando probabilidade e impacto, usando a matriz de priorização.</span></li><li><span class="tick">✓</span><span>Diferenciar as quatro estratégias de tratamento de risco: mitigar, evitar, transferir e aceitar.</span></li><li><span class="tick">✓</span><span>Propor uma medida de mitigação concreta e justificada para um risco prioritário.</span></li>
     </ul>
   </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Os quatro elementos de todo risco</h2></div>
       <p class="lead">Risco não é uma coisa só: é a combinação de uma ameaça que explora uma vulnerabilidade, com uma probabilidade e um impacto.</p>
@@ -411,6 +409,60 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </g><text x="350" y="284" class="sv-legend">É assim que uma equipe decide o que trata agora e o que fica para depois.</text>
 </svg></div>
     </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Identificando os quatro elementos</h2></div>
+  <p class="lead">O fluxograma mostra a ordem de identificação dos quatro elementos no cenário da PagoDigital: ativo, ameaça, vulnerabilidade e impacto. O que cada um é, nesse caso específico, é o que o Passo 1 pede para o grupo escrever.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 396" class="sv" role="img" aria-label="Fluxograma da identificação do risco: início; identificar o ativo, o que está em risco; identificar a ameaça, o que pode acontecer; identificar a vulnerabilidade, qual brecha permite isso; identificar o impacto, o quanto isso dói; explicar como os quatro se conectam; fim">
+      <defs>
+        <marker id="fr17-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr17-head)"/>
+
+      <rect x="60" y="54" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="73" class="sv-label sv-small">Identificar o Ativo:</text>
+      <text x="200" y="90" class="sv-label sv-small">o que está em risco?</text>
+      <path d="M200 100 L200 114" class="sv-arrow" marker-end="url(#fr17-head)"/>
+
+      <rect x="60" y="114" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="133" class="sv-label sv-small">Identificar a Ameaça:</text>
+      <text x="200" y="150" class="sv-label sv-small">o que pode acontecer?</text>
+      <path d="M200 160 L200 174" class="sv-arrow" marker-end="url(#fr17-head)"/>
+
+      <rect x="60" y="174" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="193" class="sv-label sv-small">Identificar a Vulnerabilidade:</text>
+      <text x="200" y="210" class="sv-label sv-small">qual brecha permite isso?</text>
+      <path d="M200 220 L200 234" class="sv-arrow" marker-end="url(#fr17-head)"/>
+
+      <rect x="60" y="234" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="253" class="sv-label sv-small">Identificar o Impacto:</text>
+      <text x="200" y="270" class="sv-label sv-small">o quanto isso dói?</text>
+      <path d="M200 280 L200 294" class="sv-arrow" marker-end="url(#fr17-head)"/>
+
+      <rect x="60" y="294" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="313" class="sv-label sv-small">Explicar como os quatro</text>
+      <text x="200" y="330" class="sv-label sv-small">se conectam (Passo 2)</text>
+      <path d="M200 340 L200 354" class="sv-arrow" marker-end="url(#fr17-head)"/>
+
+      <rect x="100" y="354" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="375" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">O fluxograma só lembra a ordem — ativo, ameaça, vulnerabilidade, impacto. Os quatro, para o caso da PagoDigital, são do grupo.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>A ordem importa: ameaça e vulnerabilidade só fazem sentido depois de saber qual é o ativo em risco.</span></li>
+      <li><span class="num">2</span><span>As definições gerais de cada termo estão na aba Como fazer — o cenário da PagoDigital é que dá o conteúdo específico de cada campo.</span></li>
+      <li><span class="num">3</span><span>"Probabilidade" aparece na aba Como fazer porque é parte do conceito de risco, mas esta atividade não pede essa resposta — só os quatro elementos do Passo 1.</span></li>
+      <li><span class="num">4</span><span>O Passo 2 (explicação) só faz sentido depois dos quatro campos preenchidos — por isso vem por último.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
