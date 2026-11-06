@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -322,6 +322,10 @@ section.tab{display:flex;flex-direction:column;gap:16px}
 <section>
     <div class="sec-head"><span class="n">ATIVIDADE PROPOSTA</span><h2>O que vocês vão resolver</h2></div>
     <p class="lead" style="color:var(--ink);font-size:15.5px">Você é um analista de suporte júnior em uma empresa de e-commerce. Durante a Black Friday, o sistema de monitoramento dispara e seu gestor envia a seguinte mensagem no canal da equipe:</p>
+    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-top:4px;font-size:14.5px">
+      <div style="color:var(--muted);font-family:var(--mono);font-size:11.5px;margin-bottom:8px">De: Carlos (Gerente de TI) @canal · Para: #equipe-infra · Assunto: URGENTE – Site fora do ar</div>
+      <div>“Pessoal, estamos com um problema crítico. O site parou de responder agora há pouco. O dashboard de rede mostra uma entrada massiva de tráfego, coisa de 500% acima do normal, vindo de milhares de IPs diferentes ao mesmo tempo. Não parece ser uma invasão ao banco de dados, mas o servidor simplesmente travou. Alguém consegue me explicar rápido o que pode estar acontecendo pra eu alinhar com a diretoria? É algum vírus?”</div>
+    </div>
   </section>
 <section>
     <div class="sec-head"><span class="n">OBJETIVOS</span><h2>O que vocês vão aprender aqui</h2></div>
@@ -341,6 +345,25 @@ section.tab{display:flex;flex-direction:column;gap:16px}
     </div>
   </section>
 <section>
+      <div class="sec-head"><span class="n">ENTENDA</span><h2>Como um DDoS sobrecarrega um servidor</h2></div>
+      <p class="lead">Durante a Black Friday, o servidor de Carlos recebeu tráfego de milhares de IPs ao mesmo tempo. Essa é a marca registrada de um ataque de negação de serviço (DDoS) — e o conceito de botnet explica de onde vem tanto tráfego de uma vez.</p>
+      <div class="visual"><svg viewBox="0 0 560 310" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="560" height="296" rx="12" class="sv-card"/><text x="20" y="32" class="sv-code-title">Como o ataque DDoS funciona</text><text x="20" y="52" class="sv-code sv-code-key" xml:space="preserve">1. Infecção</text><text x="42" y="78" class="sv-code sv-code-soft" xml:space="preserve">milhares de dispositivos recebem malware</text><text x="20" y="104" class="sv-code sv-code-key" xml:space="preserve">2. Botnet</text><text x="42" y="130" class="sv-code sv-code-soft" xml:space="preserve">os infectados formam uma rede de bots</text><text x="20" y="156" class="sv-code sv-code-key" xml:space="preserve">3. Comando</text><text x="42" y="182" class="sv-code sv-code-soft" xml:space="preserve">o atacante manda todos agirem juntos</text><text x="20" y="208" class="sv-code sv-code-key" xml:space="preserve">4. Inundação</text><text x="42" y="234" class="sv-code sv-code-soft" xml:space="preserve">os bots enviam requisições ao mesmo alvo</text><text x="20" y="260" class="sv-code sv-code-key" xml:space="preserve">5. Colapso</text><text x="42" y="286" class="sv-code sv-code-soft" xml:space="preserve">o servidor não aguenta e para de responder</text>
+</svg></div><div class="visual"><svg viewBox="0 0 560 200" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
+  <g>
+        <rect x="0" y="0" width="260" height="130" rx="11" class="sv-box sv-band-0"/>
+        <text x="130" y="26" class="sv-card-key">Carros legítimos</text>
+        <text x="130" y="52" class="sv-label">Usuários reais</text>
+        <text x="130" y="81" class="sv-legend sv-small">tentam acessar o site</text><text x="130" y="96" class="sv-legend sv-small">e não conseguem passar</text>
+      </g><g>
+        <rect x="300" y="0" width="260" height="130" rx="11" class="sv-box sv-band-1"/>
+        <text x="430" y="26" class="sv-card-key">Carros falsos</text>
+        <text x="430" y="52" class="sv-label">Bots da botnet</text>
+        <text x="430" y="81" class="sv-legend sv-small">entopem a pista inteira</text><text x="430" y="96" class="sv-legend sv-small">de propósito</text>
+      </g><text x="280" y="156" class="sv-legend">Imagine um engarrafamento gigante bloqueando uma rodovia: carros legítimos não</text><text x="280" y="172" class="sv-legend">conseguem passar porque a estrada está entupida de carros falsos.</text>
+</svg></div>
+    </section>
+<section>
     <div class="comoBox">
       <h2>Como preencher este relatório</h2>
       <ol class="comoList">
@@ -349,62 +372,83 @@ section.tab{display:flex;flex-direction:column;gap:16px}
     </div>
   </section>
 </section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
-<section>
-      <div class="sec-head"><span class="n">ENTENDA</span><h2>Que tipo de dado é esse?</h2></div>
-      <p class="lead">A LGPD trata categorias de dado de formas diferentes. Classificar errado leva a proteger de menos — ou a gastar protegendo o que não precisa.</p>
-      <div class="visual"><svg viewBox="0 0 690 162" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-      <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
-    </marker>
-    <marker id="sv-head-soft" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-      <path d="M0,0 L8,4 L0,8 z" class="sv-headfill-soft"/>
-    </marker>
-  </defs>
-  <g>
-        <rect x="0" y="0" width="218" height="130" rx="11" class="sv-box sv-band-0"/>
-        <text x="109" y="26" class="sv-card-key">Dado pessoal</text>
-        <text x="109" y="52" class="sv-label">Identifica uma pessoa</text>
-        <text x="109" y="88.5" class="sv-legend sv-small">nome, e-mail, CPF, endereço,</text><text x="109" y="103.5" class="sv-legend sv-small">telefone</text>
-      </g><g>
-        <rect x="236" y="0" width="218" height="130" rx="11" class="sv-box sv-band-1"/>
-        <text x="345" y="26" class="sv-card-key">Dado sensível</text>
-        <text x="345" y="52" class="sv-label">Exige proteção reforçada</text>
-        <text x="345" y="81" class="sv-legend sv-small">saúde, biometria, origem</text><text x="345" y="96" class="sv-legend sv-small">racial, religião, opinião</text><text x="345" y="111" class="sv-legend sv-small">política</text>
-      </g><g>
-        <rect x="472" y="0" width="218" height="130" rx="11" class="sv-box sv-band-2"/>
-        <text x="581" y="26" class="sv-card-key">Anonimizado</text>
-        <text x="581" y="52" class="sv-label">Não identifica ninguém</text>
-        <text x="581" y="88.5" class="sv-legend sv-small">fora do escopo da LGPD — desde</text><text x="581" y="103.5" class="sv-legend sv-small">que não seja reversível</text>
-      </g><text x="345" y="156" class="sv-legend">Pergunta-chave: dá para chegar em uma pessoa específica a partir desse dado?</text>
-</svg></div><div class="visual"><svg viewBox="0 0 690 162" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-      <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
-    </marker>
-    <marker id="sv-head-soft" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-      <path d="M0,0 L8,4 L0,8 z" class="sv-headfill-soft"/>
-    </marker>
-  </defs>
-  <g>
-        <rect x="0" y="0" width="218" height="130" rx="11" class="sv-box sv-band-0"/>
-        <text x="109" y="26" class="sv-card-key">Controle 1</text>
-        <text x="109" y="52" class="sv-label">Criptografia</text>
-        <text x="109" y="88.5" class="sv-legend sv-small">em trânsito (TLS) e em repouso</text><text x="109" y="103.5" class="sv-legend sv-small">(banco de dados)</text>
-      </g><g>
-        <rect x="236" y="0" width="218" height="130" rx="11" class="sv-box sv-band-1"/>
-        <text x="345" y="26" class="sv-card-key">Controle 2</text>
-        <text x="345" y="52" class="sv-label">Controle de acesso</text>
-        <text x="345" y="88.5" class="sv-legend sv-small">menor privilégio — só quem</text><text x="345" y="103.5" class="sv-legend sv-small">precisa, vê</text>
-      </g><g>
-        <rect x="472" y="0" width="218" height="130" rx="11" class="sv-box sv-band-2"/>
-        <text x="581" y="26" class="sv-card-key">Controle 3</text>
-        <text x="581" y="52" class="sv-label">Registro e monitoramento</text>
-        <text x="581" y="88.5" class="sv-legend sv-small">logs de acesso para auditoria</text><text x="581" y="103.5" class="sv-legend sv-small">e detecção</text>
-      </g><text x="345" y="156" class="sv-legend">Quanto mais sensível o dado, mais desses controles precisam estar ligados ao mesmo tempo.</text>
-</svg></div>
-    </section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Reconhecendo o incidente</h2></div>
+  <p class="lead">O fluxograma mostra como reconhecer o ataque pelos sintomas antes de escrever a resposta a Carlos: eliminar phishing e MITM, nomear o ataque, explicar com o conceito de botnet e usar a analogia do engarrafamento.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 544" class="sv" role="img" aria-label="Fluxograma do reconhecimento do incidente: início; ler os sintomas, tráfego 500% acima do normal vindo de milhares de IPs, sem invasão ao banco; perguntar se alguém foi enganado para entregar dados ou clicar em algo; se sim, é phishing, não é o caso aqui; se não, perguntar se alguém se inseriu no meio de uma comunicação para ler ou alterar dados; se sim, é MITM, não é o caso aqui; se não, nomear o ataque, explicar com o conceito de botnet, usar a analogia do engarrafamento e escrever a resposta profissional para Carlos; fim">
+      <defs>
+        <marker id="fr13b-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+
+      <rect x="60" y="54" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="73" class="sv-label sv-small">Ler os sintomas: tráfego 500%</text>
+      <text x="200" y="90" class="sv-label sv-small">acima do normal, milhares de IPs</text>
+      <path d="M200 100 L200 114" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+
+      <polygon points="200,114 320,146 200,178 80,146" class="sv-diamond"/>
+      <text x="200" y="142" class="sv-label sv-small">Alguém foi enganado pra</text>
+      <text x="200" y="158" class="sv-label sv-small">entregar dados ou clicar algo?</text>
+      <path d="M320 146 L400 146" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+      <text x="346" y="138" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="123" width="160" height="46" rx="8" class="sv-box-ok"/>
+      <text x="480" y="142" class="sv-label sv-small">Phishing</text>
+      <text x="480" y="159" class="sv-label sv-small">(não é o caso aqui)</text>
+      <path d="M560 146 L600 146 L600 290 L204 290" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+
+      <path d="M200 178 L200 194" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+      <text x="210" y="190" class="sv-tag sv-no">F</text>
+
+      <polygon points="200,194 320,226 200,258 80,226" class="sv-diamond"/>
+      <text x="200" y="222" class="sv-label sv-small">Alguém se inseriu no meio</text>
+      <text x="200" y="238" class="sv-label sv-small">pra ler/alterar os dados?</text>
+      <path d="M320 226 L400 226" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+      <text x="346" y="218" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="203" width="160" height="46" rx="8" class="sv-box-ok"/>
+      <text x="480" y="222" class="sv-label sv-small">MITM</text>
+      <text x="480" y="239" class="sv-label sv-small">(não é o caso aqui)</text>
+      <path d="M560 226 L600 226 L600 290 L204 290" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+
+      <path d="M200 258 L200 290" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+      <text x="210" y="274" class="sv-tag sv-no">F</text>
+
+      <rect x="60" y="290" width="280" height="32" rx="8" class="sv-box-no"/>
+      <text x="200" y="311" class="sv-label sv-small">Nomear o ataque (Passo 1)</text>
+      <path d="M200 322 L200 336" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+
+      <rect x="60" y="336" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="357" class="sv-label sv-small">Explicar com o conceito de botnet</text>
+      <path d="M200 368 L200 382" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+
+      <rect x="60" y="382" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="401" class="sv-label sv-small">Usar a analogia do</text>
+      <text x="200" y="418" class="sv-label sv-small">engarrafamento</text>
+      <path d="M200 428 L200 442" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+
+      <rect x="60" y="442" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="461" class="sv-label sv-small">Escrever como resposta</text>
+      <text x="200" y="478" class="sv-label sv-small">profissional pra Carlos</text>
+      <path d="M200 488 L200 502" class="sv-arrow" marker-end="url(#fr13b-head)"/>
+
+      <rect x="100" y="502" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="523" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">Os dois primeiros losangos eliminam as outras ameaças estudadas pelos sintomas que NÃO aparecem no cenário de Carlos — nenhum dos dois nomeia o ataque: isso é o Passo 1.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>Os sintomas do cenário (tráfego de milhares de IPs, sem invasão ao banco) já eliminam phishing e MITM — nenhum dos dois explica um pico de tráfego assim.</span></li>
+      <li><span class="num">2</span><span>O conceito de botnet (aba Como fazer) explica POR QUE o tráfego vem de milhares de lugares diferentes ao mesmo tempo: são dispositivos infectados, não um único atacante.</span></li>
+      <li><span class="num">3</span><span>A analogia do engarrafamento é a mesma que Carlos e a diretoria vão entender sem jargão técnico — é por isso que o Passo 1 pede essa analogia específica.</span></li>
+      <li><span class="num">4</span><span>A resposta final precisa soar como uma mensagem real de chat: direta, sem prometer uma causa raiz que ainda não foi investigada.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
@@ -509,7 +553,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
     <ul class="lista-obj"><li>Compreender a Tríade CIA (Confidencialidade, Integridade, Disponibilidade) como base da segurança da informação.</li><li>Relacionar os três pilares da CIA a políticas de segurança organizacionais.</li><li>Identificar os componentes de uma ameaça cibernética: vetor de ataque, motivação e superfície de ataque.</li><li>Reconhecer e diferenciar os ataques DoS/DDoS, Phishing e MITM (Man-in-the-Middle).</li><li>Aplicar a matriz STRIDE para categorizar ameaças de segurança.</li><li>Compreender o modelo de responsabilidade compartilhada em ambientes de nuvem.</li><li>Debater boas práticas de cultura de segurança: política de senhas, engenharia social e atualizações.</li></ul>
 
     <h3>Procedimento / Atividade</h3>
-    <p><b>Atividade proposta:</b> Você é um analista de suporte júnior em uma empresa de e-commerce. Durante a Black Friday, o sistema de monitoramento dispara e seu gestor envia a seguinte mensagem no canal da equipe:</p>
+    <p><b>Atividade proposta:</b> Você é um analista de suporte júnior em uma empresa de e-commerce. Durante a Black Friday, o sistema de monitoramento dispara e seu gestor envia a seguinte mensagem no canal da equipe: “Pessoal, estamos com um problema crítico. O site parou de responder agora há pouco. O dashboard de rede mostra uma entrada massiva de tráfego, coisa de 500% acima do normal, vindo de milhares de IPs diferentes ao mesmo tempo. Não parece ser uma invasão ao banco de dados, mas o servidor simplesmente travou. Alguém consegue me explicar rápido o que pode estar acontecendo pra eu alinhar com a diretoria? É algum vírus?” (De: Carlos, Gerente de TI)</p>
 
     <h3>Procedimentos para a realização da atividade</h3>
     <div id="corpoRoteiro"></div>
