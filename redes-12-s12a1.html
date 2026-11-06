@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -340,16 +340,6 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </div>
     </div>
   </section>
-<section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Onde houver dica de <b>como pensar</b>, use-a antes de escrever.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Na janela de impressão, escolha <b>Destino: Salvar como PDF</b> e salve como <b>NOME_TURMA_S12A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
-      </ol>
-    </div>
-  </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Como uma conexão TCP começa</h2></div>
       <p class="lead">Antes de qualquer dado trafegar, cliente e servidor combinam os números de sequência. São três mensagens — daí o nome 3-way handshake.</p>
@@ -400,10 +390,89 @@ section.tab{display:flex;flex-direction:column;gap:16px}
         <text x="348" y="148" class="sv-tag sv-ok">V</text>
         <rect x="380" y="132" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
         <text x="520" y="162" class="sv-label sv-small">janela é reduzida</text>
-        
+
       </g><text x="350" y="218" class="sv-legend">O slow-start explica por que o início de um download é mais lento que o meio dele.</text>
 </svg></div>
     </section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Onde houver dica de <b>como pensar</b>, use-a antes de escrever.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Na janela de impressão, escolha <b>Destino: Salvar como PDF</b> e salve como <b>NOME_TURMA_S12A1</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>O ciclo de vida da conexão</h2></div>
+  <p class="lead">O fluxograma mostra o ciclo da conexão: abrir com o 3-way handshake, trocar dados com ACK cumulativo, e crescer a janela a cada RTT até uma perda reduzi-la. A decisão sobre retransmissão (Etapa 2) e os números de cada etapa ficam com o grupo.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 510" class="sv" role="img" aria-label="Fluxograma da conexão TCP: início; 3-way handshake, SYN, SYN mais ACK, ACK; dados trafegam e B confirma com ACK cumulativo; decidir se um segmento fora de ordem pede fast retransmit ou timeout; pegar o próximo RTT; perguntar se houve perda nesse RTT; se não houve, dobrar a cwnd e voltar para o próximo RTT; se houve, reduzir a cwnd; depois, consolidar o que o TCP garante que o UDP não garante; fim">
+      <defs>
+        <marker id="fr12-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr12-head)"/>
+
+      <rect x="60" y="54" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="73" class="sv-label sv-small">3-way handshake: SYN →</text>
+      <text x="200" y="90" class="sv-label sv-small">SYN+ACK → ACK (Etapa 1)</text>
+      <path d="M200 100 L200 114" class="sv-arrow" marker-end="url(#fr12-head)"/>
+
+      <rect x="60" y="114" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="133" class="sv-label sv-small">Dados trafegam; B confirma</text>
+      <text x="200" y="150" class="sv-label sv-small">com ACK cumulativo (Etapa 2)</text>
+      <path d="M200 160 L200 174" class="sv-arrow" marker-end="url(#fr12-head)"/>
+
+      <rect x="60" y="174" width="280" height="46" rx="8" class="sv-box-no"/>
+      <text x="200" y="193" class="sv-label sv-small">Segmento fora de ordem —</text>
+      <text x="200" y="210" class="sv-label sv-small">fast retransmit ou timeout?</text>
+      <path d="M200 220 L200 234" class="sv-arrow" marker-end="url(#fr12-head)"/>
+
+      <rect x="60" y="234" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="255" class="sv-label sv-small">Pegar o próximo RTT (Etapa 3)</text>
+      <path d="M200 266 L200 282" class="sv-arrow" marker-end="url(#fr12-head)"/>
+
+      <polygon points="200,282 320,314 200,346 80,314" class="sv-diamond"/>
+      <text x="200" y="310" class="sv-label sv-small">Houve perda</text>
+      <text x="200" y="326" class="sv-label sv-small">nesse RTT?</text>
+      <path d="M320 314 L400 314" class="sv-arrow" marker-end="url(#fr12-head)"/>
+      <text x="346" y="306" class="sv-tag sv-no">F</text>
+      <rect x="400" y="298" width="200" height="32" rx="8" class="sv-box-ok"/>
+      <text x="500" y="319" class="sv-label sv-small">Dobrar a cwnd</text>
+      <path d="M500 330 L500 356 L24 356 L24 234 L196 234" class="sv-arrow sv-arrow-soft" marker-end="url(#fr12-head)"/>
+      <text x="30" y="300" class="sv-tag sv-no">mais</text>
+      <text x="30" y="312" class="sv-tag sv-no">1 RTT</text>
+
+      <path d="M200 346 L200 362" class="sv-arrow" marker-end="url(#fr12-head)"/>
+      <text x="210" y="358" class="sv-tag sv-ok">V</text>
+
+      <rect x="60" y="362" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="383" class="sv-label sv-small">Reduzir a cwnd</text>
+      <path d="M200 394 L200 408" class="sv-arrow" marker-end="url(#fr12-head)"/>
+
+      <rect x="60" y="408" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="427" class="sv-label sv-small">Consolidar: o que o TCP</text>
+      <text x="200" y="444" class="sv-label sv-small">garante e o UDP não (Etapa 4)</text>
+      <path d="M200 454 L200 468" class="sv-arrow" marker-end="url(#fr12-head)"/>
+
+      <rect x="100" y="468" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="489" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">A caixa laranja não escolhe por vocês entre fast retransmit e timeout — essa decisão, com a justificativa, é da Etapa 2. O laço de RTTs também não diz quantas voltas existem: depende do cenário que o grupo inventar.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>O handshake (Etapa 1) só tem três mensagens, sempre nessa ordem — o que muda de cenário para cenário são os números de Seq, Ack e MSS que vocês escolherem.</span></li>
+      <li><span class="num">2</span><span>A caixa laranja junta os dois casos da Etapa 2 (ACK normal e segmento fora de ordem) numa única decisão: cabe ao grupo escolher fast retransmit ou timeout e justificar.</span></li>
+      <li><span class="num">3</span><span>O laço do RTT (Etapa 3) repete "dobrar a cwnd" até a primeira perda — é esse laço que gera a sequência de cwnd que o passo pede.</span></li>
+      <li><span class="num">4</span><span>A Etapa 4 só faz sentido depois das outras três — por isso fecha o fluxograma, comparando o que o TCP garante e o UDP não.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
