@@ -314,14 +314,22 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
 <section class="tab" id="como" role="tabpanel">
 <section>
     <div class="sec-head"><span class="n">ATIVIDADE PROPOSTA</span><h2>O que vocês vão resolver</h2></div>
-    <p class="lead" style="color:var(--ink);font-size:15.5px">Você é o analista de SOC (Centro de Operações de Segurança). O IDS gerou o seguinte alerta vindo da rede interna para um servidor externo desconhecido:</p>
+    <p class="lead" style="color:var(--ink);font-size:15.5px">Você é o analista de SOC (Centro de Operações de Segurança). O IDS gerou o seguinte alerta:</p>
+    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-top:4px;font-family:var(--mono);font-size:13px;line-height:1.7">
+      <div>TIMESTAMP: 2026-02-01 14:30:05</div>
+      <div>SRC_IP: 192.168.1.50 (Interno – Marketing)</div>
+      <div>DST_IP: 200.20.20.1 (Servidor externo desconhecido)</div>
+      <div>PORT: 443</div>
+      <div>EVENT: Large Outbound Transfer (3.5 GB)</div>
+      <div>SIGNATURE: Anomaly-Based Detection</div>
+    </div>
   </section>
 <section>
     <div class="sec-head"><span class="n">OBJETIVOS</span><h2>O que vocês vão aprender aqui</h2></div>
@@ -340,16 +348,6 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </div>
     </div>
   </section>
-<section>
-    <div class="comoBox">
-      <h2>Como preencher este relatório</h2>
-      <ol class="comoList">
-        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Onde houver dica de <b>como pensar</b>, use-a antes de escrever.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Na janela de impressão, escolha <b>Destino: Salvar como PDF</b> e salve como <b>NOME_TURMA_S14A2</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
-      </ol>
-    </div>
-  </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Quem bloqueia, quem só avisa</h2></div>
       <p class="lead">As três soluções ficam no caminho do tráfego, mas reagem de formas diferentes — e é isso que define quando cada uma é usada.</p>
@@ -370,52 +368,102 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </g><g>
         <rect x="236" y="0" width="218" height="130" rx="11" class="sv-box sv-band-1"/>
         <text x="345" y="26" class="sv-card-key">IDS</text>
-        <text x="345" y="52" class="sv-label">Detecta e avisa</text>
-        <text x="345" y="88.5" class="sv-legend sv-small">observa o tráfego e gera</text><text x="345" y="103.5" class="sv-legend sv-small">alerta — não bloqueia</text>
+        <text x="345" y="52" class="sv-label">Detecta e avisa (passivo)</text>
+        <text x="345" y="88.5" class="sv-legend sv-small">como um cão de guarda:</text><text x="345" y="103.5" class="sv-legend sv-small">late mas não morde</text>
       </g><g>
         <rect x="472" y="0" width="218" height="130" rx="11" class="sv-box sv-band-2"/>
         <text x="581" y="26" class="sv-card-key">IPS</text>
-        <text x="581" y="52" class="sv-label">Detecta e bloqueia</text>
-        <text x="581" y="88.5" class="sv-legend sv-small">fica em linha e corta a</text><text x="581" y="103.5" class="sv-legend sv-small">conexão suspeita</text>
+        <text x="581" y="52" class="sv-label">Detecta e bloqueia (ativo)</text>
+        <text x="581" y="88.5" class="sv-legend sv-small">como o segurança de uma</text><text x="581" y="103.5" class="sv-legend sv-small">festa: barra na entrada</text>
       </g><text x="345" y="156" class="sv-legend">O alerta do cenário veio de um IDS: alguém precisa decidir o que fazer com ele.</text>
-</svg></div><div class="visual"><svg viewBox="0 0 700 236" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-      <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
-    </marker>
-    <marker id="sv-head-soft" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-      <path d="M0,0 L8,4 L0,8 z" class="sv-headfill-soft"/>
-    </marker>
-  </defs>
+</svg></div><div class="visual"><svg viewBox="0 0 560 200" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
   <g>
-        <rect x="0" y="0" width="320" height="50" rx="9" class="sv-box "/>
-        <text x="160" y="30" class="sv-label sv-small">O destino é conhecido e legítimo?</text>
-        <path d="M 326 25 L 372 25" class="sv-arrow" marker-end="url(#sv-head)"/>
-        <text x="348" y="16" class="sv-tag sv-ok">V</text>
-        <rect x="380" y="0" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
-        <text x="520" y="30" class="sv-label sv-small">provável falso positivo</text>
-        <path d="M 160 52 L 160 68" class="sv-arrow sv-arrow-soft" marker-end="url(#sv-head-soft)"/>
-           <text x="172" y="64" class="sv-tag sv-no">falso ↓</text>
+        <rect x="0" y="0" width="260" height="130" rx="11" class="sv-box sv-band-0"/>
+        <text x="130" y="26" class="sv-card-key">Assinatura</text>
+        <text x="130" y="52" class="sv-label">Compara com ataques</text>
+        <text x="130" y="68" class="sv-label">conhecidos</text>
+        <text x="130" y="97" class="sv-legend sv-small">muito preciso, mas cego</text><text x="130" y="112" class="sv-legend sv-small">pra ataques novos</text>
       </g><g>
-        <rect x="0" y="66" width="320" height="50" rx="9" class="sv-box "/>
-        <text x="160" y="96" class="sv-label sv-small">O horário e o volume são normais?</text>
-        <path d="M 326 91 L 372 91" class="sv-arrow" marker-end="url(#sv-head)"/>
-        <text x="348" y="82" class="sv-tag sv-ok">V</text>
-        <rect x="380" y="66" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
-        <text x="520" y="96" class="sv-label sv-small">provável ruído</text>
-        <path d="M 160 118 L 160 134" class="sv-arrow sv-arrow-soft" marker-end="url(#sv-head-soft)"/>
-           <text x="172" y="130" class="sv-tag sv-no">falso ↓</text>
-      </g><g>
-        <rect x="0" y="132" width="320" height="50" rx="9" class="sv-box sv-box-soft"/>
-        <text x="160" y="154" class="sv-label sv-small">Origem interna → destino externo</text><text x="160" y="170" class="sv-label sv-small">desconhecido</text>
-        <path d="M 326 157 L 372 157" class="sv-arrow" marker-end="url(#sv-head)"/>
-        <text x="348" y="148" class="sv-tag sv-ok">V</text>
-        <rect x="380" y="132" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
-        <text x="520" y="154" class="sv-label sv-small">investigar: possível</text><text x="520" y="170" class="sv-label sv-small">exfiltração</text>
-        
-      </g><text x="350" y="218" class="sv-legend">Analisar um log é responder a essas perguntas na ordem, com os dados do próprio alerta.</text>
+        <rect x="300" y="0" width="260" height="130" rx="11" class="sv-box sv-band-1"/>
+        <text x="430" y="26" class="sv-card-key">Anomalia</text>
+        <text x="430" y="52" class="sv-label">Compara com o tráfego</text>
+        <text x="430" y="68" class="sv-label">normal</text>
+        <text x="430" y="97" class="sv-legend sv-small">detecta o novo, mas gera</text><text x="430" y="112" class="sv-legend sv-small">mais falsos positivos</text>
+      </g><text x="280" y="156" class="sv-legend">O alerta do cenário usa detecção por anomalia (SIGNATURE: Anomaly-Based) —</text><text x="280" y="172" class="sv-legend">por isso pode ser ameaça real ou falso positivo.</text>
 </svg></div>
     </section>
+<section>
+    <div class="comoBox">
+      <h2>Como preencher este relatório</h2>
+      <ol class="comoList">
+        <li><span class="num">1</span><span>Leia o cenário e observe os diagramas — eles mostram o conceito que a sua resposta precisa usar.</span></li><li><span class="num">2</span><span>Preencha a identificação do grupo no Passo 0.</span></li><li><span class="num">3</span><span>Responda um passo de cada vez, na ordem. Onde houver dica de <b>como pensar</b>, use-a antes de escrever.</span></li><li><span class="num">4</span><span>Confira o checklist no final — ele verifica se não ficou nada faltando.</span></li><li><span class="num">5</span><span>Clique em <b>Gerar PDF da resposta</b>. Na janela de impressão, escolha <b>Destino: Salvar como PDF</b> e salve como <b>NOME_TURMA_S14A2</b>.</span></li><li><span class="num">6</span><span>Envie esse PDF no AVA. O que vocês digitarem fica salvo neste computador sozinho — dá para fechar a página e voltar depois.</span></li>
+      </ol>
+    </div>
+  </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Lendo o log campo por campo</h2></div>
+  <p class="lead">O fluxograma mostra como ler o alerta campo por campo antes de concluir qualquer coisa — a mesma ordem que a dica do Passo 1 pede. A conclusão (ameaça ou ruído?) e a regra de IPS são do grupo.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 516" class="sv" role="img" aria-label="Fluxograma da análise de log: início; ler o timestamp, o horário é compatível com uso normal; ler o SRC_IP, a origem é interna ou externa; ler o DST_IP, o destino é conhecido ou desconhecido; ler a porta e o evento, o volume é normal para esse serviço; ler a assinatura, é detecção por assinatura ou por anomalia; juntar as evidências e decidir se é ameaça real ou ruído; propor a regra de IPS, bloquear origem, destino ou porta; fim">
+      <defs>
+        <marker id="fr14-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr14-head)"/>
+
+      <rect x="60" y="54" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="73" class="sv-label sv-small">Ler o TIMESTAMP: o horário</text>
+      <text x="200" y="90" class="sv-label sv-small">é compatível com uso normal?</text>
+      <path d="M200 100 L200 114" class="sv-arrow" marker-end="url(#fr14-head)"/>
+
+      <rect x="60" y="114" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="133" class="sv-label sv-small">Ler o SRC_IP: a origem é</text>
+      <text x="200" y="150" class="sv-label sv-small">interna ou externa?</text>
+      <path d="M200 160 L200 174" class="sv-arrow" marker-end="url(#fr14-head)"/>
+
+      <rect x="60" y="174" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="193" class="sv-label sv-small">Ler o DST_IP: o destino é</text>
+      <text x="200" y="210" class="sv-label sv-small">conhecido ou desconhecido?</text>
+      <path d="M200 220 L200 234" class="sv-arrow" marker-end="url(#fr14-head)"/>
+
+      <rect x="60" y="234" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="253" class="sv-label sv-small">Ler a PORT e o EVENT: o</text>
+      <text x="200" y="270" class="sv-label sv-small">volume é normal pro serviço?</text>
+      <path d="M200 280 L200 294" class="sv-arrow" marker-end="url(#fr14-head)"/>
+
+      <rect x="60" y="294" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="313" class="sv-label sv-small">Ler a SIGNATURE: é por</text>
+      <text x="200" y="330" class="sv-label sv-small">assinatura ou por anomalia?</text>
+      <path d="M200 340 L200 354" class="sv-arrow" marker-end="url(#fr14-head)"/>
+
+      <rect x="60" y="354" width="280" height="46" rx="8" class="sv-box-no"/>
+      <text x="200" y="373" class="sv-label sv-small">Juntar as evidências: ameaça</text>
+      <text x="200" y="390" class="sv-label sv-small">real ou ruído? (Passo 1)</text>
+      <path d="M200 400 L200 414" class="sv-arrow" marker-end="url(#fr14-head)"/>
+
+      <rect x="60" y="414" width="280" height="46" rx="8" class="sv-box-no"/>
+      <text x="200" y="433" class="sv-label sv-small">Propor a regra de IPS: origem,</text>
+      <text x="200" y="450" class="sv-label sv-small">destino ou porta? (Passo 1)</text>
+      <path d="M200 460 L200 474" class="sv-arrow" marker-end="url(#fr14-head)"/>
+
+      <rect x="100" y="474" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="495" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">Cada caixa lê um campo do log, na mesma ordem da dica do Passo 1. Nenhuma caixa decide sozinha — a conclusão junta os cinco campos.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>A ordem das caixas segue a dica do Passo 1: horário, origem, destino, porta/volume e assinatura — nessa sequência, não embaralhada.</span></li>
+      <li><span class="num">2</span><span>O campo SIGNATURE (aba Como fazer) é uma pista sobre a confiabilidade do alerta, não sobre o que aconteceu: anomalia detecta o novo, mas também erra mais.</span></li>
+      <li><span class="num">3</span><span>As duas últimas caixas, em laranja, são as duas respostas do Passo 1 — o fluxograma organiza o raciocínio até ali, mas não decide por vocês.</span></li>
+      <li><span class="num">4</span><span>Analisar um log fora de ordem (pular direto pro "parece suspeito") é como julgar sem ver a prova toda — por isso cada campo tem sua própria caixa.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
@@ -520,7 +568,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
     <ul class="lista-obj"><li>Diferenciar as três gerações de arquitetura de firewall: filtragem de pacotes, inspeção de estado e NGFW.</li><li>Compreender o conceito de Zona Desmilitarizada (DMZ) e sua função estratégica.</li><li>Diferenciar IDS (detecção) de IPS (prevenção) quanto a atuação, posicionamento e efeito na rede.</li><li>Comparar métodos de detecção baseados em assinatura e em anomalia.</li><li>Escrever regras básicas de firewall com <code>iptables</code> e de detecção com Snort.</li><li>Analisar logs de segurança para diferenciar ameaça real de ruído.</li></ul>
 
     <h3>Procedimento / Atividade</h3>
-    <p><b>Atividade proposta:</b> Você é o analista de SOC (Centro de Operações de Segurança). O IDS gerou o seguinte alerta vindo da rede interna para um servidor externo desconhecido:</p>
+    <p><b>Atividade proposta:</b> Você é o analista de SOC (Centro de Operações de Segurança). O IDS gerou o seguinte alerta: TIMESTAMP: 2026-02-01 14:30:05 · SRC_IP: 192.168.1.50 (Interno – Marketing) · DST_IP: 200.20.20.1 (Servidor externo desconhecido) · PORT: 443 · EVENT: Large Outbound Transfer (3.5 GB) · SIGNATURE: Anomaly-Based Detection.</p>
 
     <h3>Procedimentos para a realização da atividade</h3>
     <div id="corpoRoteiro"></div>
