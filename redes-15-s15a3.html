@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -329,57 +329,10 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       <li><span class="tick">✓</span><span>Identificar as principais vulnerabilidades web listadas pelo OWASP Top 10.</span></li><li><span class="tick">✓</span><span>Compreender o que é uma vulnerabilidade e por que ela é uma "falha", não apenas um "ataque".</span></li><li><span class="tick">✓</span><span>Diferenciar SQL Injection (ataque ao banco de dados) de XSS (ataque à tela/navegador).</span></li><li><span class="tick">✓</span><span>Reconhecer os campos de um formulário como pontos de entrada de risco.</span></li><li><span class="tick">✓</span><span>Aplicar técnicas básicas de validação de entradas para reduzir vulnerabilidades.</span></li>
     </ul>
   </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>Toda entrada é suspeita até ser validada</h2></div>
       <p class="lead">A regra de ouro do OWASP: valide no servidor, sempre. A validação no navegador melhora a experiência, mas pode ser burlada.</p>
-      <div class="visual"><svg viewBox="0 0 700 302" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-      <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
-    </marker>
-    <marker id="sv-head-soft" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-      <path d="M0,0 L8,4 L0,8 z" class="sv-headfill-soft"/>
-    </marker>
-  </defs>
-  <g>
-        <rect x="0" y="0" width="320" height="50" rx="9" class="sv-box "/>
-        <text x="160" y="22" class="sv-label sv-small">O campo é obrigatório e veio</text><text x="160" y="38" class="sv-label sv-small">vazio?</text>
-        <path d="M 326 25 L 372 25" class="sv-arrow" marker-end="url(#sv-head)"/>
-        <text x="348" y="16" class="sv-tag sv-ok">V</text>
-        <rect x="380" y="0" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
-        <text x="520" y="30" class="sv-label sv-small">rejeita e explica o erro</text>
-        <path d="M 160 52 L 160 68" class="sv-arrow sv-arrow-soft" marker-end="url(#sv-head-soft)"/>
-           <text x="172" y="64" class="sv-tag sv-no">falso ↓</text>
-      </g><g>
-        <rect x="0" y="66" width="320" height="50" rx="9" class="sv-box "/>
-        <text x="160" y="96" class="sv-label sv-small">O tipo e o formato conferem?</text>
-        <path d="M 326 91 L 372 91" class="sv-arrow" marker-end="url(#sv-head)"/>
-        <text x="348" y="82" class="sv-tag sv-ok">V</text>
-        <rect x="380" y="66" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
-        <text x="520" y="96" class="sv-label sv-small">segue para o próximo teste</text>
-        <path d="M 160 118 L 160 134" class="sv-arrow sv-arrow-soft" marker-end="url(#sv-head-soft)"/>
-           <text x="172" y="130" class="sv-tag sv-no">falso ↓</text>
-      </g><g>
-        <rect x="0" y="132" width="320" height="50" rx="9" class="sv-box "/>
-        <text x="160" y="162" class="sv-label sv-small">O tamanho está dentro do limite?</text>
-        <path d="M 326 157 L 372 157" class="sv-arrow" marker-end="url(#sv-head)"/>
-        <text x="348" y="148" class="sv-tag sv-ok">V</text>
-        <rect x="380" y="132" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
-        <text x="520" y="162" class="sv-label sv-small">segue</text>
-        <path d="M 160 184 L 160 200" class="sv-arrow sv-arrow-soft" marker-end="url(#sv-head-soft)"/>
-           <text x="172" y="196" class="sv-tag sv-no">falso ↓</text>
-      </g><g>
-        <rect x="0" y="198" width="320" height="50" rx="9" class="sv-box sv-box-soft"/>
-        <text x="160" y="228" class="sv-label sv-small">passou por tudo</text>
-        <path d="M 326 223 L 372 223" class="sv-arrow" marker-end="url(#sv-head)"/>
-        <text x="348" y="214" class="sv-tag sv-ok">V</text>
-        <rect x="380" y="198" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
-        <text x="520" y="220" class="sv-label sv-small">aceita e armazena com</text><text x="520" y="236" class="sv-label sv-small">segurança</text>
-        
-      </g><text x="350" y="284" class="sv-legend">Validar é uma sequência de perguntas — e a primeira que falha já interrompe o processo.</text>
-</svg></div><div class="visual"><svg viewBox="0 0 690 162" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
+      <div class="visual"><svg viewBox="0 0 690 162" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
       <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
@@ -406,6 +359,74 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </g><text x="345" y="156" class="sv-legend">Essas três regras cobrem a maior parte das falhas de injeção do OWASP Top 10.</text>
 </svg></div>
     </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>A sequência de uma validação</h2></div>
+  <p class="lead">O fluxograma mostra a sequência que toda validação segue, campo por campo: vazio? → formato certo? → tamanho certo? → aceita. As regras específicas de cada campo (nome, e-mail, idade, senha, mensagem) são a tabela do Passo 1.</p>
+  <div class="visual">
+    <svg viewBox="0 -56 700 362" class="sv" role="img" aria-label="Fluxograma da validação de um campo: início; o campo é obrigatório e veio vazio, se sim rejeita e explica o erro; se não, o tipo e o formato conferem, se não rejeita; se sim, o tamanho está dentro do limite, se não rejeita; se sim, passou por tudo e aceita e armazena com segurança; fim">
+      <defs>
+        <marker id="fr15-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+        <marker id="fr15-head-soft" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" class="sv-headfill-soft"/>
+        </marker>
+      </defs>
+      <rect x="60" y="-50" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="160" y="-29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M160 -18 L160 0" class="sv-arrow" marker-end="url(#fr15-head)"/>
+  <g>
+        <rect x="0" y="0" width="320" height="50" rx="9" class="sv-box "/>
+        <text x="160" y="22" class="sv-label sv-small">O campo é obrigatório e veio</text><text x="160" y="38" class="sv-label sv-small">vazio?</text>
+        <path d="M 326 25 L 372 25" class="sv-arrow" marker-end="url(#fr15-head)"/>
+        <text x="348" y="16" class="sv-tag sv-ok">V</text>
+        <rect x="380" y="0" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
+        <text x="520" y="30" class="sv-label sv-small">rejeita e explica o erro</text>
+        <path d="M 160 52 L 160 68" class="sv-arrow sv-arrow-soft" marker-end="url(#fr15-head-soft)"/>
+           <text x="172" y="64" class="sv-tag sv-no">falso ↓</text>
+      </g><g>
+        <rect x="0" y="66" width="320" height="50" rx="9" class="sv-box "/>
+        <text x="160" y="96" class="sv-label sv-small">O tipo e o formato conferem?</text>
+        <path d="M 326 91 L 372 91" class="sv-arrow" marker-end="url(#fr15-head)"/>
+        <text x="348" y="82" class="sv-tag sv-ok">V</text>
+        <rect x="380" y="66" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
+        <text x="520" y="96" class="sv-label sv-small">segue para o próximo teste</text>
+        <path d="M 160 118 L 160 134" class="sv-arrow sv-arrow-soft" marker-end="url(#fr15-head-soft)"/>
+           <text x="172" y="130" class="sv-tag sv-no">falso ↓</text>
+      </g><g>
+        <rect x="0" y="132" width="320" height="50" rx="9" class="sv-box "/>
+        <text x="160" y="162" class="sv-label sv-small">O tamanho está dentro do limite?</text>
+        <path d="M 326 157 L 372 157" class="sv-arrow" marker-end="url(#fr15-head)"/>
+        <text x="348" y="148" class="sv-tag sv-ok">V</text>
+        <rect x="380" y="132" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
+        <text x="520" y="162" class="sv-label sv-small">segue</text>
+        <path d="M 160 184 L 160 200" class="sv-arrow sv-arrow-soft" marker-end="url(#fr15-head-soft)"/>
+           <text x="172" y="196" class="sv-tag sv-no">falso ↓</text>
+      </g><g>
+        <rect x="0" y="198" width="320" height="50" rx="9" class="sv-box sv-box-soft"/>
+        <text x="160" y="228" class="sv-label sv-small">passou por tudo</text>
+        <path d="M 326 223 L 372 223" class="sv-arrow" marker-end="url(#fr15-head)"/>
+        <text x="348" y="214" class="sv-tag sv-ok">V</text>
+        <rect x="380" y="198" width="280" height="50" rx="9" class="sv-box sv-box-ok"/>
+        <text x="520" y="220" class="sv-label sv-small">aceita e armazena com</text><text x="520" y="236" class="sv-label sv-small">segurança</text>
+
+      </g>
+      <path d="M520 248 L520 264" class="sv-arrow" marker-end="url(#fr15-head)"/>
+      <rect x="420" y="264" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="520" y="285" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">Validar é uma sequência de perguntas — e a primeira que falha já interrompe o processo. O desenho não diz qual é o formato certo pra e-mail nem o tamanho certo pra senha: essas regras, campo a campo, são a tabela do Passo 1.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>A sequência é sempre a mesma, campo a campo: vazio? → formato? → tamanho? → aceita. A primeira pergunta que falhar já interrompe o processo — não dá pra pular etapas.</span></li>
+      <li><span class="num">2</span><span>O fluxograma não diz qual é "o formato certo" pra e-mail nem "o tamanho certo" pra senha — essas regras, por campo, são a tabela do Passo 1.</span></li>
+      <li><span class="num">3</span><span>Quando os três testes passam, a entrada é aceita — isso vale pra qualquer um dos cinco campos do cenário, com regras diferentes em cada caso.</span></li>
+      <li><span class="num">4</span><span>As três regras gerais (aba Como fazer) valem pra todos os campos ao mesmo tempo: validar no servidor, preferir lista de permitidos, nunca confiar só no formulário.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
