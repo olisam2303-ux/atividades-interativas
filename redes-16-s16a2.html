@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -329,42 +329,10 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       <li><span class="tick">✓</span><span>descrever a estrutura de 32 bits de um endereço IPv4 e sua notação decimal;</span></li><li><span class="tick">✓</span><span>diferenciar a porção de rede e a porção de host de um endereço IPv4;</span></li><li><span class="tick">✓</span><span>explicar por que o CIDR substituiu o modelo classful;</span></li><li><span class="tick">✓</span><span>calcular hosts válidos a partir do prefixo CIDR;</span></li><li><span class="tick">✓</span><span>calcular blocos de sub-rede, endereço de rede e de broadcast;</span></li><li><span class="tick">✓</span><span>dividir uma rede real em sub-redes por setor;</span></li><li><span class="tick">✓</span><span>configurar IPs/máscaras em PCs e roteador no Packet Tracer e testar conectividade entre sub-redes.</span></li>
     </ul>
   </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
-      <div class="sec-head"><span class="n">ENTENDA</span><h2>Um /24 dividido em quatro /26</h2></div>
-      <p class="lead">Cada bit emprestado da parte de host dobra o número de sub-redes e divide pela metade o número de endereços de cada uma.</p>
-      <div class="visual"><svg viewBox="0 0 720 162" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-      <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
-    </marker>
-    <marker id="sv-head-soft" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-      <path d="M0,0 L8,4 L0,8 z" class="sv-headfill-soft"/>
-    </marker>
-  </defs>
-  <g>
-        <rect x="2" y="54" width="176" height="40" rx="8" class="sv-band sv-band-0"/>
-        <text x="90" y="79" class="sv-label sv-small">RH</text>
-        <text x="90" y="42" class="sv-range">.0 a .63</text>
-        <text x="90" y="111" class="sv-legend sv-small">rede .0 · broadcast</text><text x="90" y="125" class="sv-legend sv-small">.63</text>
-      </g><g>
-        <rect x="182" y="54" width="176" height="40" rx="8" class="sv-band sv-band-1"/>
-        <text x="270" y="79" class="sv-label sv-small">Financeiro</text>
-        <text x="270" y="42" class="sv-range">.64 a .127</text>
-        <text x="270" y="111" class="sv-legend sv-small">rede .64 · broadcast</text><text x="270" y="125" class="sv-legend sv-small">.127</text>
-      </g><g>
-        <rect x="362" y="54" width="176" height="40" rx="8" class="sv-band sv-band-2"/>
-        <text x="450" y="79" class="sv-label sv-small">TI</text>
-        <text x="450" y="42" class="sv-range">.128 a .191</text>
-        <text x="450" y="111" class="sv-legend sv-small">rede .128 ·</text><text x="450" y="125" class="sv-legend sv-small">broadcast .191</text>
-      </g><g>
-        <rect x="542" y="54" width="176" height="40" rx="8" class="sv-band sv-band-3"/>
-        <text x="630" y="79" class="sv-label sv-small">Vendas</text>
-        <text x="630" y="42" class="sv-range">.192 a .255</text>
-        <text x="630" y="111" class="sv-legend sv-small">rede .192 ·</text><text x="630" y="125" class="sv-legend sv-small">broadcast .255</text>
-      </g><text x="360" y="146" class="sv-legend">Quatro blocos de 64 endereços: 62 utilizáveis em cada um (64 − rede − broadcast).</text>
-</svg></div><div class="visual"><svg viewBox="0 0 560 252" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
+      <div class="sec-head"><span class="n">ENTENDA</span><h2>Como chegar no /26</h2></div>
+      <p class="lead">Cada bit emprestado da parte de host dobra o número de sub-redes e divide pela metade o número de endereços de cada uma. A fórmula é a mesma para qualquer bloco inicial — o Passo 1 aplica ela quatro vezes.</p>
+      <div class="visual"><svg viewBox="0 0 560 252" class="sv" role="img" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="sv-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
       <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
@@ -376,6 +344,55 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   <rect x="0" y="0" width="560" height="222" rx="12" class="sv-card"/><text x="20" y="32" class="sv-code-title">Como chegar no /26</text><text x="20" y="52" class="sv-code sv-code-key" xml:space="preserve">/24 = 256 endereços em um bloco só</text><text x="20" y="78" class="sv-code sv-code-key" xml:space="preserve">emprestar 2 bits → 4 sub-redes</text><text x="42" y="104" class="sv-code sv-code-soft" xml:space="preserve">24 + 2 = /26</text><text x="42" y="130" class="sv-code sv-code-soft" xml:space="preserve">máscara 255.255.255.192</text><text x="42" y="156" class="sv-code sv-code-soft" xml:space="preserve">256 ÷ 4 = 64 endereços por sub-rede</text><text x="42" y="182" class="sv-code sv-code-soft" xml:space="preserve">64 − 2 = 62 hosts utilizáveis</text><text x="280" y="234" class="sv-legend">O “192” da máscara é 256 − 64, o tamanho do bloco.</text>
 </svg></div>
     </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Calculando cada sub-rede</h2></div>
+  <p class="lead">O fluxograma mostra o processo repetido para cada departamento: calcular rede, broadcast e faixa de hosts usando a fórmula da aba Como fazer, e registrar na tabela. Os quatro resultados — RH, Financeiro, TI e Vendas — são do grupo, no Passo 1.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 310" class="sv" role="img" aria-label="Fluxograma do cálculo das sub-redes: início; pegar o próximo departamento; calcular rede, broadcast e faixa de hosts usando a fórmula; registrar na tabela; se faltar departamento, voltar e pegar o próximo; quando não faltar nenhum, fim">
+      <defs>
+        <marker id="fr16-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr16-head)"/>
+
+      <rect x="60" y="54" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="75" class="sv-label sv-small">Pegar o próximo departamento</text>
+      <path d="M200 86 L200 100" class="sv-arrow" marker-end="url(#fr16-head)"/>
+
+      <rect x="60" y="100" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="119" class="sv-label sv-small">Calcular rede, broadcast e</text>
+      <text x="200" y="136" class="sv-label sv-small">faixa de hosts (fórmula ao lado)</text>
+      <path d="M200 146 L200 160" class="sv-arrow" marker-end="url(#fr16-head)"/>
+
+      <rect x="60" y="160" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="181" class="sv-label sv-small">Registrar na tabela (Passo 1)</text>
+      <path d="M200 192 L200 208" class="sv-arrow" marker-end="url(#fr16-head)"/>
+
+      <polygon points="200,208 300,230 200,252 100,230" class="sv-diamond"/>
+      <text x="200" y="235" class="sv-label sv-small">Falta departamento?</text>
+      <path d="M100 230 L24 230 L24 54 L196 54" class="sv-arrow sv-arrow-soft" marker-end="url(#fr16-head)"/>
+      <text x="40" y="222" class="sv-tag sv-ok">V</text>
+      <path d="M200 252 L200 268" class="sv-arrow" marker-end="url(#fr16-head)"/>
+      <text x="210" y="264" class="sv-tag sv-no">F</text>
+
+      <rect x="100" y="268" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="289" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">O fluxograma não calcula nada por vocês: ele só lembra que a mesma fórmula se repete quatro vezes, uma para cada departamento.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>Cada volta do laço calcula um departamento — a fórmula (aba Como fazer) é a mesma nas quatro voltas, só muda o ponto de partida do bloco.</span></li>
+      <li><span class="num">2</span><span>A ordem dos departamentos na tabela (RH, Financeiro, TI, Vendas) não muda o resultado — qualquer um pode ocupar qualquer um dos quatro blocos de 64 endereços.</span></li>
+      <li><span class="num">3</span><span>O enunciado já dá o /26 e o número de sub-redes (quatro) — o fluxograma começa direto no cálculo, sem precisar decidir isso.</span></li>
+      <li><span class="num">4</span><span>O Passo 2 (benefícios) só faz sentido depois da tabela pronta — por isso fica de fora do fluxograma.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
