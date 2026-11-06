@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -329,8 +329,6 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       <li><span class="tick">✓</span><span>Compreender o objetivo da LGPD (Lei Geral de Proteção de Dados) e os princípios de finalidade, adequação e necessidade.</span></li><li><span class="tick">✓</span><span>Identificar quem é o titular dos dados em um sistema, e diferenciar titularidade de posse/armazenamento.</span></li><li><span class="tick">✓</span><span>Reconhecer o que é um dado pessoal, incluindo casos em que a identificação ocorre pela combinação de informações.</span></li><li><span class="tick">✓</span><span>Diferenciar dado pessoal de dado pessoal sensível.</span></li><li><span class="tick">✓</span><span>Verificar se o tratamento de dados de uma aplicação atende aos princípios de finalidade e necessidade.</span></li>
     </ul>
   </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>O que a LGPD pergunta sobre qualquer cadastro</h2></div>
       <p class="lead">Antes de coletar um dado, a lei exige responder três perguntas. Um cadastro em conformidade é aquele que responde às três com clareza.</p>
@@ -386,6 +384,61 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       </g><text x="345" y="156" class="sv-legend">O cadastro precisa ter um canal para o titular exercer esses direitos.</text>
 </svg></div>
     </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Analisando campo por campo</h2></div>
+  <p class="lead">O fluxograma mostra o processo repetido para cada campo do cadastro: aplicar as três perguntas da LGPD (para quê? com que base legal? precisa mesmo?) e registrar o resultado. Se cada campo é adequado ou excessivo, e a conclusão final, são do grupo.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 384" class="sv" role="img" aria-label="Fluxograma da análise de conformidade: início; pegar o próximo campo do cadastro; aplicar as três perguntas da LGPD a esse campo; registrar se é necessário, adequado ou excessivo, e o que ajustar; se faltar campo, voltar e pegar o próximo; quando não faltar nenhum, concluir se o cadastro está em conformidade; fim">
+      <defs>
+        <marker id="fr18-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr18-head)"/>
+
+      <rect x="60" y="54" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="75" class="sv-label sv-small">Pegar o próximo campo do cadastro</text>
+      <path d="M200 86 L200 100" class="sv-arrow" marker-end="url(#fr18-head)"/>
+
+      <rect x="60" y="100" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="119" class="sv-label sv-small">Aplicar as 3 perguntas da</text>
+      <text x="200" y="136" class="sv-label sv-small">aba Como fazer a esse campo</text>
+      <path d="M200 146 L200 160" class="sv-arrow" marker-end="url(#fr18-head)"/>
+
+      <rect x="60" y="160" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="179" class="sv-label sv-small">Registrar: necessário? adequado</text>
+      <text x="200" y="196" class="sv-label sv-small">ou excessivo? o que ajustar? (P1)</text>
+      <path d="M200 206 L200 222" class="sv-arrow" marker-end="url(#fr18-head)"/>
+
+      <polygon points="200,222 300,244 200,266 100,244" class="sv-diamond"/>
+      <text x="200" y="251" class="sv-label sv-small">Falta campo?</text>
+      <path d="M100 244 L24 244 L24 54 L196 54" class="sv-arrow sv-arrow-soft" marker-end="url(#fr18-head)"/>
+      <text x="40" y="236" class="sv-tag sv-ok">V</text>
+      <path d="M200 266 L200 282" class="sv-arrow" marker-end="url(#fr18-head)"/>
+      <text x="210" y="278" class="sv-tag sv-no">F</text>
+
+      <rect x="60" y="282" width="280" height="46" rx="8" class="sv-box-no"/>
+      <text x="200" y="301" class="sv-label sv-small">Concluir: o cadastro está</text>
+      <text x="200" y="318" class="sv-label sv-small">em conformidade? (Passo 2)</text>
+      <path d="M200 328 L200 342" class="sv-arrow" marker-end="url(#fr18-head)"/>
+
+      <rect x="100" y="342" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="363" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">O fluxograma não classifica nenhum campo por vocês: ele só lembra que as mesmas três perguntas se repetem para cada um dos doze campos da tabela.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>Cada volta do laço analisa um campo — as três perguntas (aba Como fazer) são sempre as mesmas, só muda a resposta de cada campo.</span></li>
+      <li><span class="num">2</span><span>Religião e histórico de doenças pedem atenção redobrada (dica do Passo 1): são dados sensíveis, não só "mais um campo da tabela".</span></li>
+      <li><span class="num">3</span><span>Só depois de passar pelos doze campos é que a conclusão (Passo 2) faz sentido — por isso ela fica fora do laço, no final.</span></li>
+      <li><span class="num">4</span><span>Os três direitos do titular (aba Como fazer) não entram na tabela do Passo 1, mas ajudam a pensar no "o que ajustar" de cada campo.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
