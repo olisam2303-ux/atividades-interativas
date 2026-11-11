@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -329,8 +329,6 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       <li><span class="tick">✓</span><span>explicar o que é uma política de backup e por que é diferente de um backup isolado;</span></li><li><span class="tick">✓</span><span>diferenciar backup full, incremental e snapshot;</span></li><li><span class="tick">✓</span><span>calcular o consumo de armazenamento de diferentes estratégias de backup;</span></li><li><span class="tick">✓</span><span>reconstruir a cadeia de restauração após uma falha com backups full e incrementais;</span></li><li><span class="tick">✓</span><span>explicar RPO e RTO e usá-los para escolher uma estratégia;</span></li><li><span class="tick">✓</span><span>justificar a importância da regra 3-2-1 e do armazenamento off-site.</span></li>
     </ul>
   </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
       <div class="sec-head"><span class="n">ENTENDA</span><h2>RTO e RPO: as duas perguntas do plano</h2></div>
       <p class="lead">Todo plano de recuperação responde a duas perguntas diferentes — quanto tempo posso ficar parado, e quanto dado posso perder.</p>
@@ -377,6 +375,71 @@ section.tab{display:flex;flex-direction:column;gap:16px}
     <tbody><tr><td>VM-01</td><td>80 GB</td><td>Monitoramento de câmeras</td><td>2 horas</td></tr><tr><td>VM-02</td><td>25 GB</td><td>Autenticação de usuários</td><td>1 hora</td></tr><tr><td>VM-03</td><td>120 GB</td><td>Banco de dados de histórico de eventos</td><td>4 horas</td></tr></tbody>
   </table></div><div class="cap">Dados do cenário.</div></div>
     </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Calculando o DR Test, VM por VM</h2></div>
+  <p class="lead">O fluxograma mostra o processo repetido para cada VM (tempo de download ÷ comparação com o RTO) e depois os passos finais. Os tempos e a conclusão de cada VM são do grupo, no Passo 1.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 504" class="sv" role="img" aria-label="Fluxograma do planejamento do DR Test: início; pegar a próxima VM da lista; calcular o tempo de download, tamanho dividido pela banda de 200 Mbps; comparar com o RTO contratual e registrar; se faltar VM, voltar e pegar a próxima; depois, propor duas estratégias para a VM-02, fazer o checklist pós-restore da VM-01, e os cuidados do DR Test isolado; fim">
+      <defs>
+        <marker id="fr20-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr20-head)"/>
+
+      <rect x="60" y="54" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="75" class="sv-label sv-small">Pegar a próxima VM da lista</text>
+      <path d="M200 86 L200 100" class="sv-arrow" marker-end="url(#fr20-head)"/>
+
+      <rect x="60" y="100" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="119" class="sv-label sv-small">Calcular o tempo de download:</text>
+      <text x="200" y="136" class="sv-label sv-small">tamanho ÷ banda (200 Mbps)</text>
+      <path d="M200 146 L200 160" class="sv-arrow" marker-end="url(#fr20-head)"/>
+
+      <rect x="60" y="160" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="179" class="sv-label sv-small">Comparar com o RTO contratual</text>
+      <text x="200" y="196" class="sv-label sv-small">e registrar (Passo 1)</text>
+      <path d="M200 206 L200 222" class="sv-arrow" marker-end="url(#fr20-head)"/>
+
+      <polygon points="200,222 300,244 200,266 100,244" class="sv-diamond"/>
+      <text x="200" y="251" class="sv-label sv-small">Falta VM?</text>
+      <path d="M100 244 L24 244 L24 54 L196 54" class="sv-arrow sv-arrow-soft" marker-end="url(#fr20-head)"/>
+      <text x="40" y="236" class="sv-tag sv-ok">V</text>
+      <path d="M200 266 L200 282" class="sv-arrow" marker-end="url(#fr20-head)"/>
+      <text x="210" y="278" class="sv-tag sv-no">F</text>
+
+      <rect x="60" y="282" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="301" class="sv-label sv-small">Propor 2 estratégias</text>
+      <text x="200" y="318" class="sv-label sv-small">pra VM-02 (Passo 2)</text>
+      <path d="M200 328 L200 342" class="sv-arrow" marker-end="url(#fr20-head)"/>
+
+      <rect x="60" y="342" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="361" class="sv-label sv-small">Checklist pós-restore</text>
+      <text x="200" y="378" class="sv-label sv-small">da VM-01 (Passo 3)</text>
+      <path d="M200 388 L200 402" class="sv-arrow" marker-end="url(#fr20-head)"/>
+
+      <rect x="60" y="402" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="421" class="sv-label sv-small">Cuidados do DR Test</text>
+      <text x="200" y="438" class="sv-label sv-small">isolado (Passo 4)</text>
+      <path d="M200 448 L200 462" class="sv-arrow" marker-end="url(#fr20-head)"/>
+
+      <rect x="100" y="462" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="483" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">O fluxograma não calcula nada por vocês: ele só lembra que o cálculo e a comparação se repetem para as três VMs, antes dos passos finais.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>Cada volta do laço calcula uma VM — o tamanho e o RTO contratual vêm da tabela da aba Como fazer, e a banda (200 Mbps) vem do enunciado.</span></li>
+      <li><span class="num">2</span><span>"Atende ao RTO?" é uma comparação simples: o tempo calculado é menor ou maior que o RTO contratual daquela VM?</span></li>
+      <li><span class="num">3</span><span>Os Passos 2, 3 e 4 só fazem sentido depois do laço — a VM-02 só precisa de estratégia alternativa se o cálculo mostrar isso.</span></li>
+      <li><span class="num">4</span><span>O RTO inclui download + restore + validação (aba Como fazer) — o Passo 1 pede só o tempo de download, que é a parte que depende da banda.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
