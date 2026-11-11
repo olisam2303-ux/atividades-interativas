@@ -314,7 +314,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
-    <button role="tab" data-tab="diagrama" id="t-diagrama" aria-selected="false">Diagrama</button>
+    <button role="tab" data-tab="fluxograma" id="t-fluxograma" aria-selected="false">Fluxograma</button>
     <button role="tab" data-tab="relatorio-tab" id="t-relatorio" aria-selected="false">Relatório</button>
   </nav>
 
@@ -332,36 +332,106 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       <li><span class="tick">✓</span><span>justificar por que o isolamento de uma VPC/VNet protege a empresa de outros clientes da mesma nuvem.</span></li>
     </ul>
   </section>
-</section>
-<section class="tab" id="diagrama" role="tabpanel" hidden>
 <section>
     <div class="sec-head"><span class="n">ENTENDA</span><h2>Na nuvem, a rede é um desenho de software</h2></div>
     <p class="lead">Não se compram cabos: a rede é descrita por software (painel web ou código) e o provedor traduz essa descrição para os equipamentos físicos usando SDN.</p>
-    <div class="visual"><svg viewBox="0 0 690 300" class="sv" role="img" aria-label="Desenho lógico de uma VPC na nuvem: a internet entra pelo gateway até a sub-rede pública, onde está o servidor web; o vRouter liga a sub-rede pública à sub-rede privada, onde está o banco de dados">
-  <rect x="20" y="62" width="650" height="226" rx="14" class="sv-card"/>
-  <text x="36" y="86" class="sv-code-title sv-left">VPC / VNet — rede virtual isolada (TechNova)</text>
-  <rect x="255" y="6" width="180" height="36" rx="10" class="sv-box-soft"/>
-  <text x="345" y="29" class="sv-label sv-small">Internet</text>
-  <rect x="255" y="102" width="180" height="34" rx="8" class="sv-box"/>
-  <text x="345" y="124" class="sv-label sv-small">Gateway de internet</text>
-  <line x1="345" y1="42" x2="345" y2="102" class="sv-link"/>
-  <rect x="50" y="160" width="250" height="110" rx="10" class="sv-box-ok"/>
-  <text x="175" y="182" class="sv-label sv-small">Sub-rede pública</text>
-  <rect x="110" y="200" width="130" height="52" rx="8" class="sv-box"/>
-  <text x="175" y="231" class="sv-label sv-small">Servidor web</text>
-  <rect x="390" y="160" width="250" height="110" rx="10" class="sv-box-no"/>
-  <text x="515" y="182" class="sv-label sv-small">Sub-rede privada</text>
-  <rect x="450" y="200" width="130" height="52" rx="8" class="sv-box"/>
-  <text x="515" y="231" class="sv-label sv-small">Banco de dados</text>
-  <rect x="308" y="212" width="74" height="34" rx="8" class="sv-diamond"/>
-  <text x="345" y="234" class="sv-label sv-small">vRouter</text>
-  <path d="M300,136 L175,160" class="sv-link"/>
-  <line x1="240" y1="226" x2="308" y2="229" class="sv-link"/>
-  <line x1="382" y1="229" x2="450" y2="226" class="sv-link"/>
-  <text x="270" y="248" class="sv-mini">só web</text>
-  <text x="418" y="248" class="sv-mini">só do servidor web</text>
-</svg><div class="cap">Desenho lógico de referência. A internet só entra pela sub-rede pública; o banco fica na sub-rede privada e só aceita conexão vinda do servidor web.</div></div>
+    <div class="visual"><svg viewBox="0 0 690 214" class="sv" role="img" xmlns="http://www.w3.org/2000/svg" aria-label="As cinco peças de uma rede virtual na nuvem, cada uma com a sua função: VPC ou VNet, sub-rede pública, sub-rede privada, vRouter e gateway de internet">
+  <rect x="0" y="0" width="690" height="64" rx="11" class="sv-box sv-box-soft"/>
+  <text x="345" y="27" class="sv-card-key">VPC / VNet</text>
+  <text x="345" y="48" class="sv-legend sv-small">a rede virtual isolada da empresa: tudo o que é dela fica aqui dentro</text>
+  <rect x="0" y="80" width="160" height="92" rx="11" class="sv-box sv-band-0"/>
+  <text x="80" y="104" class="sv-card-key">Sub-rede pública</text>
+  <text x="80" y="134" class="sv-legend sv-small">pode receber</text>
+  <text x="80" y="149" class="sv-legend sv-small">acesso da internet</text>
+  <rect x="176" y="80" width="160" height="92" rx="11" class="sv-box sv-band-1"/>
+  <text x="256" y="104" class="sv-card-key">Sub-rede privada</text>
+  <text x="256" y="134" class="sv-legend sv-small">só é alcançada</text>
+  <text x="256" y="149" class="sv-legend sv-small">de dentro da VPC</text>
+  <rect x="352" y="80" width="160" height="92" rx="11" class="sv-box sv-band-2"/>
+  <text x="432" y="104" class="sv-card-key">vRouter</text>
+  <text x="432" y="134" class="sv-legend sv-small">encaminha o tráfego</text>
+  <text x="432" y="149" class="sv-legend sv-small">entre as sub-redes</text>
+  <rect x="528" y="80" width="162" height="92" rx="11" class="sv-box sv-band-3"/>
+  <text x="609" y="104" class="sv-card-key">Gateway</text>
+  <text x="609" y="134" class="sv-legend sv-small">a porta entre a VPC</text>
+  <text x="609" y="149" class="sv-legend sv-small">e a internet</text>
+  <text x="345" y="200" class="sv-legend">Estas são as peças. Onde cada recurso da TechNova entra, e por onde o tráfego passa, é o desenho do Passo 1.</text>
+</svg></div>
   </section>
+</section>
+<section class="tab" id="fluxograma" role="tabpanel" hidden>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Como projetar a rede na nuvem</h2></div>
+  <p class="lead">O projeto começa pela caixa grande, a rede isolada. Depois, cada servidor passa pelas mesmas perguntas: precisa ser alcançado pela internet? Quem precisa falar com ele, e por qual porta? As respostas decidem a sub-rede e a regra de segurança. Só no fim as peças são ligadas.</p>
+  <div class="visual">
+    <svg viewBox="0 0 640 640" class="sv" role="img" aria-label="Fluxograma do projeto da rede na nuvem: início; criar a VPC ou VNet; pegar o próximo servidor; se ele precisa ser acessado pela internet, colocar na sub-rede pública; senão, na sub-rede privada; definir quem precisa falar com ele e por qual porta; escrever a regra permitindo só isso e bloqueando o resto; se faltar servidor, voltar; depois, ligar as peças com o vRouter e o gateway, responder a reflexão e terminar">
+      <defs>
+        <marker id="fr21a-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
+        </marker>
+      </defs>
+      <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
+      <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
+      <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <rect x="60" y="54" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="75" class="sv-label sv-small">Criar a VPC / VNet da empresa</text>
+      <path d="M200 86 L200 106" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <rect x="60" y="106" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="127" class="sv-label sv-small">Pegar o próximo servidor</text>
+      <path d="M200 138 L200 154" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+
+      <polygon points="200,154 320,186 200,218 80,186" class="sv-diamond"/>
+      <text x="200" y="182" class="sv-label sv-small">Precisa ser alcançado</text>
+      <text x="200" y="198" class="sv-label sv-small">pela internet?</text>
+      <path d="M320 186 L400 186" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <text x="346" y="178" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="169" width="220" height="34" rx="8" class="sv-box"/>
+      <text x="510" y="191" class="sv-label sv-small">Sub-rede pública</text>
+      <path d="M510 203 L510 277 L204 277" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <path d="M200 218 L200 236" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <text x="210" y="232" class="sv-tag sv-no">F</text>
+      <rect x="100" y="236" width="200" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="257" class="sv-label sv-small">Sub-rede privada</text>
+      <path d="M200 268 L200 286" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <text x="34" y="200" class="sv-tag sv-ok">P1</text>
+
+      <rect x="60" y="286" width="280" height="46" rx="8" class="sv-box-no"/>
+      <text x="200" y="305" class="sv-label sv-small">Quem precisa falar com ele?</text>
+      <text x="200" y="322" class="sv-label sv-small">Por qual porta?</text>
+      <path d="M200 332 L200 346" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <rect x="60" y="346" width="280" height="46" rx="8" class="sv-box-ok"/>
+      <text x="200" y="365" class="sv-label sv-small">Regra: permitir só essa origem,</text>
+      <text x="200" y="382" class="sv-label sv-small">nessa porta; bloquear o resto</text>
+      <text x="34" y="350" class="sv-tag sv-ok">P2</text>
+      <path d="M200 392 L200 408" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+
+      <polygon points="200,408 300,432 200,456 100,432" class="sv-diamond"/>
+      <text x="200" y="437" class="sv-label sv-small">Falta servidor?</text>
+      <path d="M100 432 L24 432 L24 96 L196 96" class="sv-arrow sv-arrow-soft" marker-end="url(#fr21a-head)"/>
+      <text x="72" y="424" class="sv-tag sv-ok">V</text>
+      <path d="M200 456 L200 474" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <text x="210" y="470" class="sv-tag sv-no">F</text>
+      <rect x="60" y="474" width="280" height="46" rx="8" class="sv-box"/>
+      <text x="200" y="493" class="sv-label sv-small">Ligar as peças: vRouter</text>
+      <text x="200" y="510" class="sv-label sv-small">e gateway de internet</text>
+      <path d="M200 520 L200 536" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <rect x="60" y="536" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="557" class="sv-label sv-small">Responder a reflexão</text>
+      <text x="34" y="556" class="sv-tag sv-ok">P3</text>
+      <path d="M200 568 L200 584" class="sv-arrow" marker-end="url(#fr21a-head)"/>
+      <rect x="100" y="584" width="200" height="30" rx="15" class="sv-box-ok"/>
+      <text x="200" y="604" class="sv-label sv-small">FIM</text>
+    </svg>
+    <div class="cap">Cada servidor da TechNova faz uma volta pelo desenho e sai com duas decisões: a sub-rede onde fica e a regra que o protege. A caixa laranja é a pergunta que define a regra.</div>
+  </div>
+  <div class="comoBox">
+    <h3 style="margin-top:0">Como ler o fluxograma</h3>
+    <ol class="comoList">
+      <li><span class="num">1</span><span>O losango decide a sub-rede. Releiam o cenário para responder a ele em cada servidor: o texto diz quem precisa ser acessado pela internet e quem não pode ser.</span></li>
+      <li><span class="num">2</span><span>A caixa laranja vira as três partes da regra do Passo 2: quem pode entrar (origem), em qual destino e por qual porta.</span></li>
+      <li><span class="num">3</span><span>“Bloquear o resto” é o que faz a regra proteger: tudo o que não foi permitido de propósito fica de fora.</span></li>
+      <li><span class="num">4</span><span>Usem as peças do quadro da aba Como fazer para montar o desenho do Passo 1: o que fica dentro de quê, e por onde o tráfego passa.</span></li>
+    </ol>
+  </div>
 </section>
 <section class="tab" id="relatorio-tab" role="tabpanel" hidden>
 <section>
@@ -381,7 +451,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">1</span>
           <div class="passo-txt">1. Desenhe a rede da TechNova.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> A caixa grande é a rede isolada (VPC/VNet). Dentro dela ficam duas caixas menores: a sub-rede pública (acessível pela internet) e a sub-rede privada (só acessível de dentro). O vRouter liga as duas, e o gateway é a porta da internet.</div>
+        <div class="dica"><b>Como pensar:</b> Usem as peças do diagrama da aba Como fazer. O que fica dentro de quê? Em qual sub-rede entra cada servidor, e por quê? O que liga uma sub-rede à outra, e o que liga a rede à internet?</div>
         <div class="campoWrap" data-rel="campo" data-rotulo="Descreva o seu desenho em uma ou duas frases (ou cole a foto)"><label class="f" for="c0">Descreva o seu desenho em uma ou duas frases (ou cole a foto)</label><input type="text" id="c0" data-campo="c0" placeholder=""></div>
       </div>
     <div class="passo">
@@ -389,7 +459,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">2</span>
           <div class="passo-txt">2. Escreva as duas regras de segurança.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Uma regra responde a três perguntas: quem pode entrar, em qual destino e por qual porta. Servidor web: a internet pode entrar. Banco de dados: só o servidor web pode entrar.</div>
+        <div class="dica"><b>Como pensar:</b> Uma regra responde a três perguntas: quem pode entrar, em qual destino e por qual porta. Releiam o cenário: quem precisa falar com cada servidor? E qual porta cada serviço usa?</div>
         <div class="campoWrap" data-rel="campo" data-rotulo="Regra 1 — servidor web: quem pode entrar e por qual porta?"><label class="f" for="c1">Regra 1 — servidor web: quem pode entrar e por qual porta?</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
         <div class="campoWrap" data-rel="campo" data-rotulo="Regra 2 — banco de dados: quem pode entrar e por qual porta?"><label class="f" for="c2">Regra 2 — banco de dados: quem pode entrar e por qual porta?</label><input type="text" id="c2" data-campo="c2" placeholder=""></div>
       </div>
