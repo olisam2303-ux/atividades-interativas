@@ -334,32 +334,34 @@ section.tab{display:flex;flex-direction:column;gap:16px}
   </section>
 <section>
     <div class="sec-head"><span class="n">ENTENDA</span><h2>Um switch SDN nasce "cego"</h2></div>
-    <p class="lead">Na rede SDN o switch não decide sozinho: ao receber um pacote que não sabe encaminhar, ele pergunta ao controlador, que devolve a regra. Depois disso, ele encaminha sem perguntar de novo.</p>
-    <div class="visual"><svg viewBox="0 0 690 162" class="sv" role="img" xmlns="http://www.w3.org/2000/svg" aria-label="As três peças de uma topologia SDN, cada uma com a sua função: host, switch OpenFlow e controlador">
-  <g>
-        <rect x="0" y="0" width="218" height="130" rx="11" class="sv-box sv-band-0"/>
-        <text x="109" y="26" class="sv-card-key">Host (h1–h4)</text>
-        <text x="109" y="52" class="sv-label">Envia e recebe dados</text>
-        <text x="109" y="88.5" class="sv-legend sv-small">é o computador</text><text x="109" y="103.5" class="sv-legend sv-small">do laboratório</text>
-      </g><g>
-        <rect x="236" y="0" width="218" height="130" rx="11" class="sv-box sv-band-1"/>
-        <text x="345" y="26" class="sv-card-key">Switch (s1–s3)</text>
-        <text x="345" y="52" class="sv-label">Encaminha pacotes</text>
-        <text x="345" y="88.5" class="sv-legend sv-small">só com uma regra</text><text x="345" y="103.5" class="sv-legend sv-small">guardada antes</text>
-      </g><g>
-        <rect x="472" y="0" width="218" height="130" rx="11" class="sv-box sv-band-2"/>
-        <text x="581" y="26" class="sv-card-key">Controlador (c0)</text>
-        <text x="581" y="52" class="sv-label">Decide as regras</text>
-        <text x="581" y="88.5" class="sv-legend sv-small">manda a regra pro</text><text x="581" y="103.5" class="sv-legend sv-small">switch perguntar</text>
-      </g><text x="345" y="156" class="sv-legend">O tracejado é o canal de controle (OpenFlow); o contínuo é o cabo de dados.</text>
+    <p class="lead">Na rede SDN, o switch não decide tudo sozinho. Quem decide, e como essa decisão chega até ele, é o que vocês vão descobrir ao seguir o caminho do ping no Passo 2.</p>
+    <div class="visual"><svg viewBox="0 0 690 220" class="sv" role="img" xmlns="http://www.w3.org/2000/svg" aria-label="As peças de uma rede SDN no Mininet: controlador, switch OpenFlow e host, e as duas convenções de linha do desenho, contínua para cabo de dados e tracejada para canal de controle">
+  <rect x="0" y="0" width="218" height="104" rx="11" class="sv-box sv-band-0"/>
+  <text x="109" y="26" class="sv-card-key">Controlador (c0)</text>
+  <text x="109" y="52" class="sv-label sv-small">control plane</text>
+  <text x="109" y="80" class="sv-legend sv-small">desenhado como círculo</text>
+  <rect x="236" y="0" width="218" height="104" rx="11" class="sv-box sv-band-1"/>
+  <text x="345" y="26" class="sv-card-key">Switch OpenFlow</text>
+  <text x="345" y="52" class="sv-label sv-small">data plane</text>
+  <text x="345" y="80" class="sv-legend sv-small">desenhado como quadrado (s1, s2…)</text>
+  <rect x="472" y="0" width="218" height="104" rx="11" class="sv-box sv-band-2"/>
+  <text x="581" y="26" class="sv-card-key">Host</text>
+  <text x="581" y="52" class="sv-label sv-small">computador do laboratório</text>
+  <text x="581" y="80" class="sv-legend sv-small">h1, h2, h3…</text>
+  <rect x="0" y="120" width="690" height="62" rx="11" class="sv-box sv-box-soft"/>
+  <path d="M40 142 L150 142" class="sv-link"/>
+  <text x="170" y="146" class="sv-label sv-small sv-left" style="text-anchor:start">linha contínua = cabo de dados</text>
+  <path d="M40 166 L150 166" class="sv-link" style="stroke-dasharray:6 5"/>
+  <text x="170" y="170" class="sv-label sv-small sv-left" style="text-anchor:start">linha tracejada = canal de controle (OpenFlow)</text>
+  <text x="345" y="208" class="sv-legend">Estas são as peças e as convenções. Quantos switches usar e quem liga em quem é o desenho do Passo 1.</text>
 </svg></div>
   </section>
 </section>
 <section class="tab" id="fluxograma" role="tabpanel" hidden>
-  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>O caminho de um pacote na rede SDN</h2></div>
-  <p class="lead">O fluxograma mostra o que acontece a cada salto do caminho de um pacote: o switch já sabe para onde mandar, ou precisa perguntar ao controlador pela primeira vez? O caminho exato de h1 até h4, salto a salto, é o que o Passo 2 pede para o grupo escrever.</p>
+  <div class="sec-head"><span class="n">FLUXOGRAMA</span><h2>Como rastrear o caminho de um pacote</h2></div>
+  <p class="lead">O Passo 2 pede o caminho do ping, etapa por etapa. Este fluxograma é o método para descobrir esse caminho: siga o pacote de um equipamento para o próximo e, em cada switch, pergunte se ele já sabe para onde mandar. Depois de chegar a h4, faça o mesmo com a resposta.</p>
   <div class="visual">
-    <svg viewBox="0 0 660 544" class="sv" role="img" aria-label="Fluxograma do caminho de um pacote na rede SDN: início; desenhar a topologia; pegar o próximo salto do caminho entre h1 e h4; perguntar se o switch desse salto já tem a regra; se sim, encaminha direto; se não, pergunta ao controlador e recebe a regra; registrar esse salto; se faltar salto até h4, voltar e pegar o próximo; quando não faltar nenhum, responder as reflexões; fim">
+    <svg viewBox="0 0 640 626" class="sv" role="img" aria-label="Fluxograma do método de rastreio: início; desenhar a topologia; o pacote sai de h1; pegar o próximo equipamento do caminho; se ainda não chegou ao destino, perguntar se esse equipamento já tem regra para o destino; se não tiver, anotar o que ele faz para descobrir o caminho e com quem fala; encaminhar ao próximo e repetir. Ao chegar ao destino, anotar a chegada; se a volta ainda não foi traçada, repetir o método de h4 até h1; depois, responder a reflexão e terminar">
       <defs>
         <marker id="fr21b-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
           <path d="M0,0 L9,4.5 L0,9 z" class="sv-headfill"/>
@@ -368,63 +370,66 @@ section.tab{display:flex;flex-direction:column;gap:16px}
       <rect x="100" y="8" width="200" height="32" rx="16" class="sv-box-ok"/>
       <text x="200" y="29" class="sv-label sv-small">INÍCIO</text>
       <path d="M200 40 L200 54" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <rect x="60" y="54" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="75" class="sv-label sv-small">Desenhar a topologia (Passo 1)</text>
+      <path d="M200 86 L200 100" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <rect x="60" y="100" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="121" class="sv-label sv-small">Partida: o pacote sai de h1</text>
+      <path d="M200 132 L200 154" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <rect x="60" y="154" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="175" class="sv-label sv-small">Próximo equipamento do caminho</text>
+      <path d="M200 186 L200 202" class="sv-arrow" marker-end="url(#fr21b-head)"/>
 
-      <rect x="60" y="54" width="280" height="46" rx="8" class="sv-box"/>
-      <text x="200" y="73" class="sv-label sv-small">Desenhar a topologia: c0,</text>
-      <text x="200" y="90" class="sv-label sv-small">switches e hosts (Passo 1)</text>
-      <path d="M200 100 L200 114" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <polygon points="200,202 320,232 200,262 80,232" class="sv-diamond"/>
+      <text x="200" y="228" class="sv-label sv-small">Chegou ao</text>
+      <text x="200" y="244" class="sv-label sv-small">destino?</text>
+      <path d="M320 232 L400 232" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <text x="346" y="224" class="sv-tag sv-ok">V</text>
+      <rect x="400" y="215" width="220" height="34" rx="8" class="sv-box-ok"/>
+      <text x="510" y="237" class="sv-label sv-small">Anotar a chegada</text>
+      <path d="M620 232 L632 232 L632 490 L324 490" class="sv-arrow" marker-end="url(#fr21b-head)"/>
 
-      <rect x="60" y="114" width="280" height="46" rx="8" class="sv-box"/>
-      <text x="200" y="133" class="sv-label sv-small">Pegar o próximo salto do</text>
-      <text x="200" y="150" class="sv-label sv-small">caminho (h1 → h4)</text>
-      <path d="M200 160 L200 174" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <path d="M200 262 L200 280" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <text x="210" y="276" class="sv-tag sv-no">F</text>
+      <polygon points="200,280 320,310 200,340 80,310" class="sv-diamond"/>
+      <text x="200" y="306" class="sv-label sv-small">Ele já tem regra</text>
+      <text x="200" y="322" class="sv-label sv-small">para esse destino?</text>
+      <path d="M320 310 L400 310" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <text x="346" y="302" class="sv-tag sv-no">F</text>
+      <rect x="400" y="287" width="220" height="46" rx="8" class="sv-box-no"/>
+      <text x="510" y="306" class="sv-label sv-small">O que ele faz para</text>
+      <text x="510" y="323" class="sv-label sv-small">descobrir? Com quem fala?</text>
+      <path d="M510 333 L510 380 L204 380" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <path d="M200 340 L200 388" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <text x="210" y="360" class="sv-tag sv-ok">V</text>
+      <rect x="60" y="388" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="409" class="sv-label sv-small">Encaminhar ao próximo</text>
+      <path d="M60 404 L40 404 L40 146 L196 146" class="sv-arrow sv-arrow-soft" marker-end="url(#fr21b-head)"/>
+      <text x="40" y="440" class="sv-tag sv-no">próximo</text>
 
-      <polygon points="200,174 320,206 200,238 80,206" class="sv-diamond"/>
-      <text x="200" y="202" class="sv-label sv-small">O switch desse salto já</text>
-      <text x="200" y="218" class="sv-label sv-small">tem a regra?</text>
-      <path d="M320 206 L400 206" class="sv-arrow" marker-end="url(#fr21b-head)"/>
-      <text x="346" y="198" class="sv-tag sv-ok">V</text>
-      <rect x="400" y="190" width="220" height="32" rx="8" class="sv-box"/>
-      <text x="510" y="211" class="sv-label sv-small">Encaminha direto</text>
-      <path d="M620 206 L620 320 L204 320" class="sv-arrow" marker-end="url(#fr21b-head)"/>
-
-      <path d="M200 238 L200 254" class="sv-arrow" marker-end="url(#fr21b-head)"/>
-      <text x="210" y="250" class="sv-tag sv-no">F</text>
-
-      <rect x="60" y="254" width="280" height="46" rx="8" class="sv-box-no"/>
-      <text x="200" y="273" class="sv-label sv-small">Pergunta ao controlador e</text>
-      <text x="200" y="290" class="sv-label sv-small">recebe a regra</text>
-      <path d="M200 300 L200 320" class="sv-arrow" marker-end="url(#fr21b-head)"/>
-
-      <rect x="60" y="320" width="280" height="46" rx="8" class="sv-box"/>
-      <text x="200" y="339" class="sv-label sv-small">Registrar esse salto</text>
-      <text x="200" y="356" class="sv-label sv-small">(Passo 2)</text>
-      <path d="M200 366 L200 382" class="sv-arrow" marker-end="url(#fr21b-head)"/>
-
-      <polygon points="200,382 300,404 200,426 100,404" class="sv-diamond"/>
-      <text x="200" y="411" class="sv-label sv-small">Falta salto até h4?</text>
-      <path d="M100 404 L24 404 L24 114 L196 114" class="sv-arrow sv-arrow-soft" marker-end="url(#fr21b-head)"/>
-      <text x="40" y="396" class="sv-tag sv-ok">V</text>
-      <path d="M200 426 L200 442" class="sv-arrow" marker-end="url(#fr21b-head)"/>
-      <text x="210" y="438" class="sv-tag sv-no">F</text>
-
-      <rect x="60" y="442" width="280" height="46" rx="8" class="sv-box"/>
-      <text x="200" y="461" class="sv-label sv-small">Responder as reflexões</text>
-      <text x="200" y="478" class="sv-label sv-small">(Passo 3)</text>
-      <path d="M200 488 L200 502" class="sv-arrow" marker-end="url(#fr21b-head)"/>
-
-      <rect x="100" y="502" width="200" height="32" rx="16" class="sv-box-ok"/>
-      <text x="200" y="523" class="sv-label sv-small">FIM</text>
+      <polygon points="200,460 320,490 200,520 80,490" class="sv-diamond"/>
+      <text x="200" y="486" class="sv-label sv-small">Já traçou a</text>
+      <text x="200" y="502" class="sv-label sv-small">volta (pong)?</text>
+      <path d="M80 490 L24 490 L24 146 L196 146" class="sv-arrow sv-arrow-soft" marker-end="url(#fr21b-head)"/>
+      <text x="64" y="482" class="sv-tag sv-no">F</text>
+      <text x="96" y="538" class="sv-tag sv-no">repetir de h4 até h1</text>
+      <path d="M200 520 L200 548" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <text x="210" y="540" class="sv-tag sv-ok">V</text>
+      <rect x="60" y="548" width="280" height="32" rx="8" class="sv-box"/>
+      <text x="200" y="569" class="sv-label sv-small">Responder a reflexão (Passo 3)</text>
+      <path d="M200 580 L200 594" class="sv-arrow" marker-end="url(#fr21b-head)"/>
+      <rect x="100" y="594" width="200" height="28" rx="14" class="sv-box-ok"/>
+      <text x="200" y="613" class="sv-label sv-small">FIM</text>
     </svg>
-    <div class="cap">O losango não resolve o caminho por vocês — ele só lembra a pergunta que todo switch SDN faz: eu já sei pra onde mandar, ou preciso perguntar?</div>
+    <div class="cap">Cada passagem pela caixa laranja vira uma das frases dos itens b e c do Passo 2. O desenho não diz a resposta: diz em que momento vocês precisam escrevê-la.</div>
   </div>
   <div class="comoBox">
     <h3 style="margin-top:0">Como ler o fluxograma</h3>
     <ol class="comoList">
-      <li><span class="num">1</span><span>A topologia (Passo 1) usa as peças da aba Como fazer — controlador no topo, switch central ligado aos dois switches de borda, hosts nas pontas.</span></li>
-      <li><span class="num">2</span><span>O laço do Passo 2 percorre o caminho salto a salto: cada vez que o pacote passa por um switch novo, a pergunta "já tem a regra?" se repete.</span></li>
-      <li><span class="num">3</span><span>Só o primeiro pacote de uma conversa passa pelo controlador — depois disso, o switch já guardou a regra e encaminha sozinho.</span></li>
-      <li><span class="num">4</span><span>As reflexões do Passo 3 (o que acontece se o controlador cair, por exemplo) só fazem sentido depois de entender esse caminho.</span></li>
+      <li><span class="num">1</span><span>Usem a topologia que vocês desenharam no Passo 1 para saber qual é o “próximo equipamento” em cada volta.</span></li>
+      <li><span class="num">2</span><span>O losango “Ele já tem regra?” é a ideia do título “um switch SDN nasce cego”. Pensem no que muda entre o primeiro pacote e os seguintes.</span></li>
+      <li><span class="num">3</span><span>A caixa laranja é onde entram as peças do quadro da aba Como fazer: quem decide e por qual linha essa conversa passa.</span></li>
+      <li><span class="num">4</span><span>Na volta (item e), percorram o método de novo, agora de h4 até h1. Comparem: os switches precisaram fazer as mesmas coisas?</span></li>
     </ol>
   </div>
 </section>
@@ -446,7 +451,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">1</span>
           <div class="passo-txt">1. Desenhe a topologia do laboratório.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Controlador (c0): um círculo no topo. Switches (s1, s2, s3): quadrados. s1 no meio, ligado a s2 e s3. Hosts (h1 a h4): computadores; h1 e h2 ligados ao s2, h3 e h4 ligados ao s3. Linha tracejada = canal de controle. Linha contínua = cabo de dados.</div>
+        <div class="dica"><b>Como pensar:</b> Usem as peças e as convenções do quadro da aba Como fazer. São dois laboratórios com dois computadores cada: quantos switches são necessários para ligá-los num ponto comum, em árvore? Com quem o controlador precisa se ligar, e com qual tipo de linha?</div>
         <div class="campoWrap" data-rel="campo" data-rotulo="Descreva o desenho em uma frase (ou cole a foto)"><label class="f" for="c0">Descreva o desenho em uma frase (ou cole a foto)</label><input type="text" id="c0" data-campo="c0" placeholder=""></div>
       </div>
     <div class="passo">
@@ -454,7 +459,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">2</span>
           <div class="passo-txt">2. Descreva o caminho do ping de h1 até h4.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Pense como o switch: ao receber o pacote de h1, ele sabe o caminho até h4? Não. Então, para quem ele pergunta? Escreva uma frase para cada etapa.</div>
+        <div class="dica"><b>Como pensar:</b> Pense como o switch: ao receber o primeiro pacote de h1, ele já tem uma regra para chegar até h4? Se não tiver, o que ele precisa fazer, e com quem? Escreva uma frase para cada etapa.</div>
         <div class="campoWrap" data-rel="campo" data-rotulo="a) O pacote sai de h1 e chega ao s2. E agora, o que o s2 faz?"><label class="f" for="c1">a) O pacote sai de h1 e chega ao s2. E agora, o que o s2 faz?</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
         <div class="campoWrap" data-rel="campo" data-rotulo="b) Com quem o s2 fala? O que ele pergunta?"><label class="f" for="c2">b) Com quem o s2 fala? O que ele pergunta?</label><input type="text" id="c2" data-campo="c2" placeholder=""></div>
         <div class="campoWrap" data-rel="campo" data-rotulo="c) O que o controlador responde ao s2?"><label class="f" for="c3">c) O que o controlador responde ao s2?</label><input type="text" id="c3" data-campo="c3" placeholder=""></div>
