@@ -310,7 +310,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
     <div class="eyebrow">REDES DE COMPUTADORES E SEGURANÇA DA INFORMAÇÃO NA NUVEM</div>
     <h1>Desenhando uma rede virtual na nuvem (VPC/VNet)</h1>
     <div class="sub">Registro de Aula S21A2 — Semana 21 · Aula 2 – Desenhando uma rede virtual na nuvem (VPC/VNet)</div>
-    <div class="chips"><span class="chip">Unidade <b>21 – Redes definidas por software e redes na nuvem</b></span><span class="chip">Base: <b>Capítulo 21 — Redes definidas por software e redes na nuvem</b></span><span class="chip">Tempo: <b>45 min</b></span><span class="chip">Entrega: <b>AVA</b></span><span class="chip">Arquivo: <b>NOME_TURMA_S21A2</b></span></div>
+    <div class="chips"><span class="chip">Unidade <b>21 – Redes definidas por software e redes na nuvem</b></span><span class="chip">Base: <b>Capítulo 21 — Redes definidas por software e redes na nuvem</b></span><span class="chip">Tempo: <b>45 min</b></span><span class="chip">Grupos: <b>até 5 alunos</b></span><span class="chip">Entrega: <b>AVA</b></span><span class="chip">Arquivo: <b>NOME_TURMA_S21A2</b></span></div>
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
@@ -451,8 +451,22 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">1</span>
           <div class="passo-txt">1. Desenhe a rede da TechNova.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Usem as peças do diagrama da aba Como fazer. O que fica dentro de quê? Em qual sub-rede entra cada servidor, e por quê? O que liga uma sub-rede à outra, e o que liga a rede à internet?</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="Descreva o seu desenho em uma ou duas frases (ou cole a foto)"><label class="f" for="c0">Descreva o seu desenho em uma ou duas frases (ou cole a foto)</label><input type="text" id="c0" data-campo="c0" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> Usem as peças do diagrama da aba Como fazer. O que fica dentro de quê? Em qual sub-rede entra cada servidor, e por quê? O que liga uma sub-rede à outra, e o que liga a rede à internet? Podem desenhar <b>no caderno</b> e fotografar, ou montar <b>no draw.io</b> — é gratuito, funciona no navegador e não precisa de cadastro: <code>app.diagrams.net</code>.</div>
+        <div class="campoWrap imgWrap" data-rel="imagem" data-rotulo="Desenho da rede da TechNova">
+      <label class="f" for="cimg">Desenho da rede da TechNova</label>
+      <div class="imgCaixa" data-caixa>
+        <img class="imgPreview" data-preview hidden alt="">
+        <p class="conv" data-conv>Anexem o desenho aqui: vale a <b>foto do desenho feito no caderno</b> ou a <b>imagem exportada do draw.io</b>. A imagem entra no PDF do relatório. Se preferirem entregar o papel em mãos, deixem em branco — o PDF sai com uma moldura vazia para colar o desenho.</p>
+        <label>
+          <input type="file" accept="image/*" data-arquivo>
+          <span class="imgBtn" role="button" tabindex="0">Anexar imagem</span>
+        </label>
+        <button type="button" class="imgBtn sec" data-remover hidden>Remover</button>
+        <div class="imgNome" data-nome></div>
+        <input type="hidden" id="cimg" data-campo="cimg">
+      </div>
+      <div class="hint">Aceita foto do celular ou arquivo de imagem. No draw.io, use <b>Arquivo → Exportar como → PNG</b>. Fica salva só neste computador.</div>
+    </div><div class="campoWrap" data-rel="campo" data-rotulo="Descrição do desenho"><label class="f" for="c0">Descreva o seu desenho em uma ou duas frases</label><textarea id="c0" data-campo="c0" rows="3" placeholder=""></textarea></div>
       </div>
     <div class="passo">
         <div class="passo-top">
@@ -460,8 +474,8 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <div class="passo-txt">2. Escreva as duas regras de segurança.</div>
         </div>
         <div class="dica"><b>Como pensar:</b> Uma regra responde a três perguntas: quem pode entrar, em qual destino e por qual porta. Releiam o cenário: quem precisa falar com cada servidor? E qual porta cada serviço usa?</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="Regra 1 — servidor web: quem pode entrar e por qual porta?"><label class="f" for="c1">Regra 1 — servidor web: quem pode entrar e por qual porta?</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="Regra 2 — banco de dados: quem pode entrar e por qual porta?"><label class="f" for="c2">Regra 2 — banco de dados: quem pode entrar e por qual porta?</label><input type="text" id="c2" data-campo="c2" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="Regra 1 — servidor web: quem pode entrar e por qual porta?"><label class="f" for="c1">Regra 1 — servidor web: quem pode entrar e por qual porta?</label><textarea id="c1" data-campo="c1" rows="2" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="Regra 2 — banco de dados: quem pode entrar e por qual porta?"><label class="f" for="c2">Regra 2 — banco de dados: quem pode entrar e por qual porta?</label><textarea id="c2" data-campo="c2" rows="2" placeholder=""></textarea></div>
       </div>
     <div class="passo">
         <div class="passo-top">
@@ -469,15 +483,15 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <div class="passo-txt">3. Responda às perguntas de reflexão.</div>
         </div>
         <div class="dica"><b>Como pensar:</b> Use o seu desenho como apoio. Uma ou duas frases são suficientes.</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="1. Se o servidor físico que hospeda o banco de dados falhar, o IP do banco muda? Por quê?"><label class="f" for="c3">1. Se o servidor físico que hospeda o banco de dados falhar, o IP do banco muda? Por quê?</label><input type="text" id="c3" data-campo="c3" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="2. Como a rede isolada (VPC/VNet) protege a TechNova de outras empresas que usam a mesma nuvem?"><label class="f" for="c4">2. Como a rede isolada (VPC/VNet) protege a TechNova de outras empresas que usam a mesma nuvem?</label><input type="text" id="c4" data-campo="c4" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual a principal vantagem de desenhar a rede por software, em vez de comprar cabos e roteadores?"><label class="f" for="c5">3. Qual a principal vantagem de desenhar a rede por software, em vez de comprar cabos e roteadores?</label><input type="text" id="c5" data-campo="c5" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="1. Se o servidor físico que hospeda o banco de dados falhar, o IP do banco muda? Por quê?"><label class="f" for="c3">1. Se o servidor físico que hospeda o banco de dados falhar, o IP do banco muda? Por quê?</label><textarea id="c3" data-campo="c3" rows="3" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="2. Como a rede isolada (VPC/VNet) protege a TechNova de outras empresas que usam a mesma nuvem?"><label class="f" for="c4">2. Como a rede isolada (VPC/VNet) protege a TechNova de outras empresas que usam a mesma nuvem?</label><textarea id="c4" data-campo="c4" rows="3" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual a principal vantagem de desenhar a rede por software, em vez de comprar cabos e roteadores?"><label class="f" for="c5">3. Qual a principal vantagem de desenhar a rede por software, em vez de comprar cabos e roteadores?</label><textarea id="c5" data-campo="c5" rows="3" placeholder=""></textarea></div>
       </div>
   </section>
 <section>
     <div class="sec-head"><span class="n">CONFIRA</span><h2>Checklist antes de gerar o PDF</h2></div>
     <div class="progresso" id="progresso"></div>
-    <label class="check"><input type="checkbox" data-check="0"><span>Todos os passos da atividade foram respondidos.</span></label><label class="check"><input type="checkbox" data-check="1"><span>As respostas usam os dados do cenário, e não explicações genéricas.</span></label><label class="check"><input type="checkbox" data-check="2"><span>As justificativas explicam o porquê de cada escolha.</span></label><label class="check"><input type="checkbox" data-check="3"><span>Vamos salvar o PDF como NOME_TURMA_S21A2 e enviar no AVA.</span></label>
+    <label class="check"><input type="checkbox" data-check="0"><span>Todos os passos da atividade foram respondidos.</span></label><label class="check"><input type="checkbox" data-check="1"><span>As respostas usam os dados do cenário, e não explicações genéricas.</span></label><label class="check"><input type="checkbox" data-check="2"><span>As justificativas explicam o porquê de cada escolha.</span></label><label class="check"><input type="checkbox" data-check="3"><span>O desenho da rede está anexado, ou será entregue no papel.</span></label><label class="check"><input type="checkbox" data-check="4"><span>Vamos salvar o PDF como NOME_TURMA_S21A2 e enviar no AVA.</span></label>
   </section>
 <section>
     <div class="sec-head"><span class="n">AVALIAÇÃO</span><h2>Como esta atividade será avaliada</h2></div>

@@ -310,7 +310,7 @@ section.tab{display:flex;flex-direction:column;gap:16px}
     <div class="eyebrow">REDES DE COMPUTADORES E SEGURANÇA DA INFORMAÇÃO NA NUVEM</div>
     <h1>Planejando uma topologia SDN com Mininet</h1>
     <div class="sub">Registro de Aula S21A3 — Semana 21 · Aula 3 – Planejando uma topologia SDN com Mininet</div>
-    <div class="chips"><span class="chip">Unidade <b>21 – Redes definidas por software e redes na nuvem</b></span><span class="chip">Base: <b>Capítulo 21 — Redes definidas por software e redes na nuvem</b></span><span class="chip">Tempo: <b>45 min</b></span><span class="chip">Entrega: <b>AVA</b></span><span class="chip">Arquivo: <b>NOME_TURMA_S21A3</b></span></div>
+    <div class="chips"><span class="chip">Unidade <b>21 – Redes definidas por software e redes na nuvem</b></span><span class="chip">Base: <b>Capítulo 21 — Redes definidas por software e redes na nuvem</b></span><span class="chip">Tempo: <b>45 min</b></span><span class="chip">Grupos: <b>até 5 alunos</b></span><span class="chip">Entrega: <b>AVA</b></span><span class="chip">Arquivo: <b>NOME_TURMA_S21A3</b></span></div>
   </header>
   <nav class="tabs" role="tablist" aria-label="Partes da atividade">
     <button role="tab" data-tab="como" id="t-como" aria-selected="true">Como fazer</button>
@@ -451,8 +451,22 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <span class="passo-num">1</span>
           <div class="passo-txt">1. Desenhe a topologia do laboratório.</div>
         </div>
-        <div class="dica"><b>Como pensar:</b> Usem as peças e as convenções do quadro da aba Como fazer. São dois laboratórios com dois computadores cada: quantos switches são necessários para ligá-los num ponto comum, em árvore? Com quem o controlador precisa se ligar, e com qual tipo de linha?</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="Descreva o desenho em uma frase (ou cole a foto)"><label class="f" for="c0">Descreva o desenho em uma frase (ou cole a foto)</label><input type="text" id="c0" data-campo="c0" placeholder=""></div>
+        <div class="dica"><b>Como pensar:</b> Usem as peças e as convenções do quadro da aba Como fazer. São dois laboratórios com dois computadores cada: quantos switches são necessários para ligá-los num ponto comum, em árvore? Com quem o controlador precisa se ligar, e com qual tipo de linha? Podem desenhar <b>no caderno</b> e fotografar, ou montar <b>no draw.io</b> — é gratuito, funciona no navegador e não precisa de cadastro: <code>app.diagrams.net</code>.</div>
+        <div class="campoWrap imgWrap" data-rel="imagem" data-rotulo="Topologia SDN da universidade InovaTech">
+      <label class="f" for="cimg">Topologia SDN da universidade InovaTech</label>
+      <div class="imgCaixa" data-caixa>
+        <img class="imgPreview" data-preview hidden alt="">
+        <p class="conv" data-conv>Anexem o desenho aqui: vale a <b>foto do desenho feito no caderno</b> ou a <b>imagem exportada do draw.io</b>. A imagem entra no PDF do relatório. Se preferirem entregar o papel em mãos, deixem em branco — o PDF sai com uma moldura vazia para colar o desenho.</p>
+        <label>
+          <input type="file" accept="image/*" data-arquivo>
+          <span class="imgBtn" role="button" tabindex="0">Anexar imagem</span>
+        </label>
+        <button type="button" class="imgBtn sec" data-remover hidden>Remover</button>
+        <div class="imgNome" data-nome></div>
+        <input type="hidden" id="cimg" data-campo="cimg">
+      </div>
+      <div class="hint">Aceita foto do celular ou arquivo de imagem. No draw.io, use <b>Arquivo → Exportar como → PNG</b>. Fica salva só neste computador.</div>
+    </div><div class="campoWrap" data-rel="campo" data-rotulo="Descrição do desenho"><label class="f" for="c0">Descreva o desenho em uma frase</label><textarea id="c0" data-campo="c0" rows="3" placeholder=""></textarea></div>
       </div>
     <div class="passo">
         <div class="passo-top">
@@ -460,11 +474,11 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <div class="passo-txt">2. Descreva o caminho do ping de h1 até h4.</div>
         </div>
         <div class="dica"><b>Como pensar:</b> Pense como o switch: ao receber o primeiro pacote de h1, ele já tem uma regra para chegar até h4? Se não tiver, o que ele precisa fazer, e com quem? Escreva uma frase para cada etapa.</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="a) O pacote sai de h1 e chega ao s2. E agora, o que o s2 faz?"><label class="f" for="c1">a) O pacote sai de h1 e chega ao s2. E agora, o que o s2 faz?</label><input type="text" id="c1" data-campo="c1" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="b) Com quem o s2 fala? O que ele pergunta?"><label class="f" for="c2">b) Com quem o s2 fala? O que ele pergunta?</label><input type="text" id="c2" data-campo="c2" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="c) O que o controlador responde ao s2?"><label class="f" for="c3">c) O que o controlador responde ao s2?</label><input type="text" id="c3" data-campo="c3" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="d) Por onde o pacote segue até chegar em h4?"><label class="f" for="c4">d) Por onde o pacote segue até chegar em h4?</label><input type="text" id="c4" data-campo="c4" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="e) Como a resposta (o pong) volta de h4 até h1?"><label class="f" for="c5">e) Como a resposta (o pong) volta de h4 até h1?</label><input type="text" id="c5" data-campo="c5" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="a) O pacote sai de h1 e chega ao s2. E agora, o que o s2 faz?"><label class="f" for="c1">a) O pacote sai de h1 e chega ao s2. E agora, o que o s2 faz?</label><textarea id="c1" data-campo="c1" rows="2" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="b) Com quem o s2 fala? O que ele pergunta?"><label class="f" for="c2">b) Com quem o s2 fala? O que ele pergunta?</label><textarea id="c2" data-campo="c2" rows="2" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="c) O que o controlador responde ao s2?"><label class="f" for="c3">c) O que o controlador responde ao s2?</label><textarea id="c3" data-campo="c3" rows="2" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="d) Por onde o pacote segue até chegar em h4?"><label class="f" for="c4">d) Por onde o pacote segue até chegar em h4?</label><textarea id="c4" data-campo="c4" rows="2" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="e) Como a resposta (o pong) volta de h4 até h1?"><label class="f" for="c5">e) Como a resposta (o pong) volta de h4 até h1?</label><textarea id="c5" data-campo="c5" rows="2" placeholder=""></textarea></div>
       </div>
     <div class="passo">
         <div class="passo-top">
@@ -472,15 +486,15 @@ section.tab{display:flex;flex-direction:column;gap:16px}
           <div class="passo-txt">3. Responda às perguntas de reflexão.</div>
         </div>
         <div class="dica"><b>Como pensar:</b> Use o seu desenho e o caminho do ping como apoio. Uma ou duas frases são suficientes.</div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="1. Se o controlador (c0) cair e h1 enviar uma mensagem para h2 pela primeira vez, o que acontece?"><label class="f" for="c6">1. Se o controlador (c0) cair e h1 enviar uma mensagem para h2 pela primeira vez, o que acontece?</label><input type="text" id="c6" data-campo="c6" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="2. Por que é útil rodar hosts, switches e controlador num único computador para estudar redes?"><label class="f" for="c7">2. Por que é útil rodar hosts, switches e controlador num único computador para estudar redes?</label><input type="text" id="c7" data-campo="c7" placeholder=""></div>
-        <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual é a função da linha tracejada (OpenFlow) que você desenhou?"><label class="f" for="c8">3. Qual é a função da linha tracejada (OpenFlow) que você desenhou?</label><input type="text" id="c8" data-campo="c8" placeholder=""></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="1. Se o controlador (c0) cair e h1 enviar uma mensagem para h2 pela primeira vez, o que acontece?"><label class="f" for="c6">1. Se o controlador (c0) cair e h1 enviar uma mensagem para h2 pela primeira vez, o que acontece?</label><textarea id="c6" data-campo="c6" rows="3" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="2. Por que é útil rodar hosts, switches e controlador num único computador para estudar redes?"><label class="f" for="c7">2. Por que é útil rodar hosts, switches e controlador num único computador para estudar redes?</label><textarea id="c7" data-campo="c7" rows="3" placeholder=""></textarea></div>
+        <div class="campoWrap" data-rel="campo" data-rotulo="3. Qual é a função da linha tracejada (OpenFlow) que você desenhou?"><label class="f" for="c8">3. Qual é a função da linha tracejada (OpenFlow) que você desenhou?</label><textarea id="c8" data-campo="c8" rows="3" placeholder=""></textarea></div>
       </div>
   </section>
 <section>
     <div class="sec-head"><span class="n">CONFIRA</span><h2>Checklist antes de gerar o PDF</h2></div>
     <div class="progresso" id="progresso"></div>
-    <label class="check"><input type="checkbox" data-check="0"><span>Todos os passos da atividade foram respondidos.</span></label><label class="check"><input type="checkbox" data-check="1"><span>As respostas usam os dados do cenário, e não explicações genéricas.</span></label><label class="check"><input type="checkbox" data-check="2"><span>As justificativas explicam o porquê de cada escolha.</span></label><label class="check"><input type="checkbox" data-check="3"><span>Vamos salvar o PDF como NOME_TURMA_S21A3 e enviar no AVA.</span></label>
+    <label class="check"><input type="checkbox" data-check="0"><span>Todos os passos da atividade foram respondidos.</span></label><label class="check"><input type="checkbox" data-check="1"><span>As respostas usam os dados do cenário, e não explicações genéricas.</span></label><label class="check"><input type="checkbox" data-check="2"><span>As justificativas explicam o porquê de cada escolha.</span></label><label class="check"><input type="checkbox" data-check="3"><span>O desenho da topologia está anexado, ou será entregue no papel.</span></label><label class="check"><input type="checkbox" data-check="4"><span>Vamos salvar o PDF como NOME_TURMA_S21A3 e enviar no AVA.</span></label>
   </section>
 <section>
     <div class="sec-head"><span class="n">AVALIAÇÃO</span><h2>Como esta atividade será avaliada</h2></div>
